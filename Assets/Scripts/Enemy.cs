@@ -138,6 +138,7 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        if (health <= 0) return;
         PlayHurtEffect();
         health -= damage;
         UpdateHealthUI();

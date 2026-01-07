@@ -152,6 +152,9 @@ public class PlayerManager : MonoBehaviour
     IEnumerator DelayedDamage(Enemy enemy, int damage, ElementType element)
     {
         yield return new WaitForSeconds(1);
+
+        if (enemy == null) 
+            yield break;
         enemy.PlayTargetedAttackEffect(element);
         enemy.TakeDamage(damage);
 

@@ -1,0 +1,349 @@
+fileFormatVersion: 2
+guid: 2bbaac0d0a3cf4eedbe2d3fe236628bf
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1459986553069950728
+    second: water-droplet-dithered-Sheet_0
+  - first:
+      213: -9140033017968475908
+    second: water-droplet-dithered-Sheet_1
+  - first:
+      213: 313135845624615613
+    second: water-droplet-dithered-Sheet_2
+  - first:
+      213: -7836797629987698366
+    second: water-droplet-dithered-Sheet_3
+  - first:
+      213: -5508343691121891427
+    second: water-droplet-dithered-Sheet_4
+  - first:
+      213: 9130840682074221686
+    second: water-droplet-dithered-Sheet_5
+  - first:
+      213: -4448858147046711970
+    second: water-droplet-dithered-Sheet_6
+  - first:
+      213: 3697417039048588229
+    second: water-droplet-dithered-Sheet_7
+  - first:
+      213: -6430223332417017787
+    second: water-droplet-dithered-Sheet_8
+  - first:
+      213: 3788382144099249356
+    second: water-droplet-dithered-Sheet_9
+  - first:
+      213: 2133306984587334315
+    second: water-droplet-dithered-Sheet_10
+  - first:
+      213: 4882027913721022962
+    second: water-droplet-dithered-Sheet_11
+  - first:
+      213: 1314417766020798898
+    second: water-droplet-dithered-Sheet_12
+  - first:
+      213: 7274398854811523031
+    second: water-droplet-dithered-Sheet_13
+  - first:
+      213: -2824676690083631557
+    second: water-droplet-dithered-Sheet_14
+  - first:
+      213: -7844714769824596068
+    second: water-droplet-dithered-Sheet_15
+  - first:
+      213: -1948662650013134821
+    second: water-droplet-dithered-Sheet_16
+  - first:
+      213: -3920966340043602602
+    second: water-droplet-dithered-Sheet_17
+  - first:
+      213: 1462897459041560719
+    second: water-droplet-dithered-Sheet_18
+  - first:
+      213: -8863012824893764954
+    second: water-droplet-dithered-Sheet_19
+  - first:
+      213: 3869078674792769692
+    second: water-droplet-dithered-Sheet_20
+  - first:
+      213: 5804601636343637
+    second: water-droplet-dithered-Sheet_21
+  - first:
+      213: 7555119338812804734
+    second: water-droplet-dithered-Sheet_22
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: water-droplet-dithered-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f82b6f17f51dbbe0800000000000000
+      internalID: -1459986553069950728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-droplet-dithered-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf0c5a86564182180800000000000000
+      internalID: -9140033017968475908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-droplet-dithered-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db295ec746b785400800000000000000
+      internalID: 313135845624615613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-droplet-dithered-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 249c5ff931a1e3390800000000000000
+      internalID: -7836797629987698366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-droplet-dithered-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d976aede89e6e83b0800000000000000
+      internalID: -5508343691121891427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-droplet-dithered-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67c28bb193347be70800000000000000
+      internalID: 9130840682074221686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: water-droplet-dithered-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5d9d29161b7242c0800000000000000
+      internalID: -4448858147046711970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 35d9c51336e6f43c19871fd42e54bffe
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":7.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      water-droplet-dithered-Sheet_0: -1459986553069950728
+      water-droplet-dithered-Sheet_1: -9140033017968475908
+      water-droplet-dithered-Sheet_2: 313135845624615613
+      water-droplet-dithered-Sheet_3: -7836797629987698366
+      water-droplet-dithered-Sheet_4: -5508343691121891427
+      water-droplet-dithered-Sheet_5: 9130840682074221686
+      water-droplet-dithered-Sheet_6: -4448858147046711970
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

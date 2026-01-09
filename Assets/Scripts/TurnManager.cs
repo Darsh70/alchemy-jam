@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,11 +9,9 @@ public class TurnManager : MonoBehaviour
     public TurnState currentState = TurnState.PlayerTurn;
     public PlayerManager playerManager;
 
-    
-
     void Awake()
     {
-       if (Instance != null && Instance != this)
+        if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
             return;
@@ -22,11 +21,9 @@ public class TurnManager : MonoBehaviour
 
     void Start()
     {
-
         if (WaveManager.Instance != null)
             StartWave();
     }
-
 
     public void StartWave()
     {
@@ -34,47 +31,48 @@ public class TurnManager : MonoBehaviour
         StartPlayerTurn();
     }
 
-
-    
-
     // ----- PLAYER TURN ------
     public void StartPlayerTurn()
     {
         currentState = TurnState.PlayerTurn;
         Debug.Log("Player turn");
-        playerManager.ResetActionPoints();
+        // if (PlayerManager.Instance != null)
+        //     PlayerManager.Instance.ResetTurn();
     }
 
     public void EndPlayerTurn()
     {
         if (currentState != TurnState.PlayerTurn) return;
         Debug.Log("End player turn");
-        StartEnemyTurn();
+
+        StartCoroutine(EnemyTurnRoutine());
     }
 
     // ----- ENEMY TURN -----
-    void StartEnemyTurn()
+    IEnumerator EnemyTurnRoutine()
     {
         currentState = TurnState.EnemyTurn;
         Debug.Log("Enemy turn");
 
-        Invoke(nameof(EnemyAction), 0.75f);
-    }
+        List<Enemy> enemies = WaveManager.Instance.ActiveEnemies;
 
-    void EnemyAction()
-    {
-        foreach (Enemy enemy in WaveManager.Instance.ActiveEnemies)
+        foreach (Enemy enemy in enemies)
         {
-            enemy.PerformTurn();
-        }
-        StartPlayerTurn();
+            if (enemy == null) continue;
 
+            Debug.Log($"Enemy {enemy.name} attacking");
+
+            // Wait for this enemy to fully perform its turn
+            yield return enemy.PerformTurn();
+        }
+
+        // After all enemies acted, start player turn
+        StartPlayerTurn();
     }
 
     public void GameOver()
     {
         currentState = TurnState.None;
         Debug.Log("Game Over");
-
     }
 }

@@ -7,7 +7,7 @@ public class SpellMenu : MonoBehaviour
 
     [Header("Water Buttons")]
     public GameObject buttonWaterBall;
-    public GameObject buttonWaterBlast;
+    public GameObject buttonHeal;
     public GameObject buttonRain;
 
     [Header("Electricity Buttons")]
@@ -20,7 +20,7 @@ public class SpellMenu : MonoBehaviour
         buttonBomb.SetActive(false);
 
         buttonWaterBall.SetActive(false);
-        buttonWaterBlast.SetActive(false);
+        buttonHeal.SetActive(false);
         buttonRain.SetActive(false);
 
         buttonZap.SetActive(false);
@@ -40,7 +40,7 @@ public class SpellMenu : MonoBehaviour
             
             case ElementType.Water:
                 buttonWaterBall.SetActive(true);
-                buttonWaterBlast.SetActive(true);
+                buttonHeal.SetActive(true);
                 buttonRain.SetActive(true);
                 break;
             

@@ -2,5 +2,6 @@ public enum SpellType
 {
     Single,
     AOE,
-    Status
+    Status,
+    Skill
 }

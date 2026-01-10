@@ -35,9 +35,13 @@ public class TurnManager : MonoBehaviour
     public void StartPlayerTurn()
     {
         currentState = TurnState.PlayerTurn;
-        Debug.Log("Player turn");
-        // if (PlayerManager.Instance != null)
-        //     PlayerManager.Instance.ResetTurn();
+        Debug.Log("Player turn started");
+
+        if (playerManager != null)
+        {
+            //Process Heal-over-Time at the start of the turn
+            playerManager.TickHoTs();
+        }
     }
 
     public void EndPlayerTurn()
@@ -52,21 +56,37 @@ public class TurnManager : MonoBehaviour
     IEnumerator EnemyTurnRoutine()
     {
         currentState = TurnState.EnemyTurn;
-        Debug.Log("Enemy turn");
+        Debug.Log("Enemy turn started");
 
-        List<Enemy> enemies = WaveManager.Instance.ActiveEnemies;
+
+        List<Enemy> enemies = new List<Enemy>(WaveManager.Instance.ActiveEnemies);
 
         foreach (Enemy enemy in enemies)
         {
             if (enemy == null) continue;
 
+            // Process Damage-over-Time for this specific enemy
+            if (playerManager != null)
+            {
+                playerManager.TickEnemyDoTs(enemy);
+            }
+
+            // Check if the DoT killed the enemy. If so, skip their turn.
+            if (enemy == null || enemy.health <= 0)
+            {
+                yield return new WaitForSeconds(0.3f); // Brief pause to show they died from DoT
+                continue;
+            }
+
             Debug.Log($"Enemy {enemy.name} attacking");
 
             // Wait for this enemy to fully perform its turn
             yield return enemy.PerformTurn();
+            
+            // Small pause between different enemies acting
+            yield return new WaitForSeconds(0.5f);
         }
 
-        // After all enemies acted, start player turn
         StartPlayerTurn();
     }
 

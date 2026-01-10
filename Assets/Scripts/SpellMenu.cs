@@ -4,6 +4,7 @@ public class SpellMenu : MonoBehaviour
 {
     [Header("Bomb Button")]
     public GameObject buttonBomb;
+    public GameObject buttonBlackHole;
 
     [Header("Water Buttons")]
     public GameObject buttonWaterBall;
@@ -18,6 +19,7 @@ public class SpellMenu : MonoBehaviour
     public void HideAll()
     {
         buttonBomb.SetActive(false);
+        buttonBlackHole.SetActive(false);
 
         buttonWaterBall.SetActive(false);
         buttonHeal.SetActive(false);
@@ -36,6 +38,7 @@ public class SpellMenu : MonoBehaviour
         {
             case ElementType.Bomb:
                 buttonBomb.SetActive(true);
+                buttonBlackHole.SetActive(true);
                 break;
             
             case ElementType.Water:

@@ -47,7 +47,8 @@ public class Enemy : MonoBehaviour
 
     void UpdateHealthUI()
     {
-        healthBarFill.fillAmount = (float)health / maxHealth;
+        if (healthBarFill != null)
+            healthBarFill.fillAmount = (float)health / maxHealth;
     }
 
     public void ApplyElement(ElementType element, SpellType spellType)
@@ -91,28 +92,27 @@ public class Enemy : MonoBehaviour
     public IEnumerator PerformTurn()
     {
 
+        if (health <= 0) yield break;
+
         animator.SetTrigger("Attack");
 
-
+        // Length of the attack animation before resetting position
         float attackAnimLength = 0.7f; 
         yield return new WaitForSeconds(attackAnimLength);
 
         transform.position = originalPosition;
     }
 
-
     public void PerformAttackMove()
     {
-
         transform.position = originalPosition + transform.right * 1f;
 
-        // Apply damage at same frame
-        if (TurnManager.Instance != null && TurnManager.Instance.playerManager != null)
+        // Apply damage to player
+        if (PlayerManager.Instance != null)
         {
-            TurnManager.Instance.playerManager.TakeDamage(attackDamage);
+            PlayerManager.Instance.TakeDamage(attackDamage);
         }
     }
-
 
     public void ResetPosition()
     {
@@ -126,24 +126,30 @@ public class Enemy : MonoBehaviour
         PlayHurtEffect();
         health -= damage;
         UpdateHealthUI();
-        Debug.Log($"Enemy took {damage} damage");
+        Debug.Log($"{gameObject.name} took {damage} damage. HP: {health}");
 
         if (health <= 0) Die();
     }
 
-    public void PlayHurtEffect() { /* animation / flash */ }
+    public void PlayHurtEffect() { /* animation / flash logic */ }
 
-    public void PlayTargetedAttackEffect(ElementType element) { /* need to add visuals */ }
+    public void PlayTargetedAttackEffect(ElementType element) { /* visual FX logic */ }
 
     void Die()
     {
         PlayDeathEffect();
+
+        if (PlayerManager.Instance != null)
+        {
+            PlayerManager.Instance.ClearDoTsForEnemy(this);
+        }
+
         if (WaveManager.Instance != null)
             WaveManager.Instance.OnEnemyKill(this);
 
         Destroy(gameObject);
-        Debug.Log("Enemy defeated");
+        Debug.Log($"{gameObject.name} defeated");
     }
 
-    public void PlayDeathEffect() { /* add visuals */ }
+    public void PlayDeathEffect() { /* visual death FX logic */ }
 }

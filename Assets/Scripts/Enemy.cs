@@ -61,31 +61,9 @@ public class Enemy : MonoBehaviour
             currentElement = element;
             Debug.Log($"Enemy is now affected by {element}");
         }
-
-        if (element == ElementType.Bomb && currentElement != null)
-        {
-            HandleReaction(currentElement.Value);
-            currentElement = null;
-        }
     }
 
-    void HandleReaction(ElementType existing)
-    {
-        switch (existing)
-        {
-            case ElementType.Water:
-                Debug.Log("Vaporize");
-                TakeDamage(5);
-                break;
-            case ElementType.Electricity:
-                Debug.Log("Overload");
-                TakeDamage(6);
-                break;
-            default:
-                Debug.Log("No Reaction");
-                break;
-        }
-    }
+
 
     // ─────────────────────────────
     // Perform Enemy Turn

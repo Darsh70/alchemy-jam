@@ -30,6 +30,7 @@ public class PlayerManager : MonoBehaviour
     public GameObject zapPrefab;
     public GameObject lightningPrefab;
     public GameObject chargePrefab;
+    public GameObject dotPrefab;
 
     // ─────────────────────────────
     // Spell History (for combos)
@@ -114,19 +115,32 @@ public class PlayerManager : MonoBehaviour
         List<DoT> dots = activeDoTs[enemy];
         for (int i = dots.Count - 1; i >= 0; i--)
         {
+            // 1. Apply the damage
             enemy.TakeDamage(dots[i].damage);
+
+            // 2. Spawn the DoT VFX
+            if (dotPrefab != null)
+            {
+
+                Vector3 spawnPos = enemy.transform.position; 
+                
+                GameObject vfx = Instantiate(dotPrefab, spawnPos, Quaternion.identity);
+            }
+
+            if (CameraShake.Instance != null)
+            CameraShake.Instance.Shake(0.1f, 0.05f);
+
+
             dots[i].turnsLeft--;
 
             if (dots[i].turnsLeft <= 0)
             {
-                if (dots[i].magicCircle != null) Destroy(dots[i].magicCircle);
                 dots.RemoveAt(i);
             }
         }
 
         if (dots.Count == 0) activeDoTs.Remove(enemy);
     }
-
     public void ClearDoTsForEnemy(Enemy enemy)
     {
         if (activeDoTs.ContainsKey(enemy))
@@ -144,6 +158,7 @@ public class PlayerManager : MonoBehaviour
     // ─────────────────────────────
     public void CastSpell(ElementType element, SpellType spellType)
     {
+
         if (TurnManager.Instance.currentState != TurnState.PlayerTurn)
             return;
 
@@ -162,46 +177,62 @@ public class PlayerManager : MonoBehaviour
             return;
         }
 
-        Debug.Log($"Casting {spellType} {element}");
+
+        if (targetEnemy == null && WaveManager.Instance.ActiveEnemies.Count > 0)
+            targetEnemy = WaveManager.Instance.ActiveEnemies[0];
+
+        if (targetEnemy == null && spellType != SpellType.Status)
+        {
+            Debug.LogWarning("No enemies available");
+            return;
+        }
+
+        // Damage Calculation and Reaction Check
+        // Get base damage , then check if reaction overrides it
+        int damage = GetBaseDamage(element, spellType);
+        
+        RecordSpell(element, spellType);
+        
+        bool reactionTriggered = CheckComboOrReaction(targetEnemy, element, spellType);
+
+        if (reactionTriggered)
+        {
+            damage = 0; // If Overload/Vaporize, the Bomb deals 0 additional damage
+        }
+
+        Debug.Log($"Casting {spellType} {element}. Base Damage: {damage}");
+
 
         if (spellType == SpellType.Skill && element == ElementType.Water)
         {
+
             Heal(3);
         }
-        else
+        else if (spellType == SpellType.Status)
         {
-            if (targetEnemy == null && WaveManager.Instance.ActiveEnemies.Count > 0)
-                targetEnemy = WaveManager.Instance.ActiveEnemies[0];
-
-            if (targetEnemy == null && spellType != SpellType.Status)
+            // Status Spells
+            if (targetEnemy != null)
             {
-                Debug.LogWarning("No enemies available");
-                return;
+                GameObject mc = SpawnMagicCircle(targetEnemy.transform, element, spellType, true);
+                targetEnemy.currentStatusCircle = mc;
+                targetEnemy.ApplyElement(element, spellType);
             }
-
-            int damage = GetBaseDamage(element, spellType);
-
-            if (spellType != SpellType.Status)
+        }
+        else 
+        {
+            // Attack Spells 
+            if (targetEnemy != null)
             {
+                // Spawn standard magic circle (non-persistent)
                 SpawnMagicCircle(targetEnemy.transform, element, spellType);
-                if (damage > 0)
-                    StartCoroutine(DelayedDamage(targetEnemy, damage, element, spellType));
+                
+                StartCoroutine(DelayedDamage(targetEnemy, damage, element, spellType));
 
                 targetEnemy.ApplyElement(element, spellType);
             }
-            else
-            {
-                if (targetEnemy != null)
-                {
-                    
-                    GameObject mc = SpawnMagicCircle(targetEnemy.transform, element, spellType, true);
-                    targetEnemy.currentStatusCircle = mc;
-                    AddDoT(targetEnemy, element, 1, 3, mc);
-                }
-            }
         }
 
-        // Bomb counter for Ultimate attack
+
         if (element == ElementType.Bomb && spellType == SpellType.Single)
         {
             bombCounter++;
@@ -212,19 +243,19 @@ public class PlayerManager : MonoBehaviour
             bombCounter = 0; 
         }
 
-        RecordSpell(element, spellType);
-        CheckComboOrReaction(targetEnemy, element, spellType);
 
         if (spellType == SpellType.Single)
         {
+            // Single spells generate 1 AP
             if (currentActionPoints < maxActionPoints)
             {
                 currentActionPoints++;
                 UpdateActionPoints();
             }
         }
-        else if (spellType == SpellType.Skill || spellType == SpellType.Status)
+        else if (costsAP)
         {
+            // Status/Skill spells consume 1 AP
             UseActionPoint();
         }
 
@@ -243,39 +274,73 @@ public class PlayerManager : MonoBehaviour
             spellHistory.Dequeue();
     }
 
-    void CheckComboOrReaction(Enemy enemy, ElementType element, SpellType spellType)
+
+    bool CheckComboOrReaction(Enemy enemy, ElementType element, SpellType spellType)
     {
-        if (enemy != null && spellType == SpellType.Single && element == ElementType.Bomb && enemy.currentElement != null)
+        bool reactionTriggered = false;
+
+        // REACTIONS 
+        if (enemy != null && element == ElementType.Bomb && enemy.currentElement != null)
         {
-            HandleReaction(enemy, enemy.currentElement.Value);
-            enemy.currentElement = null;
+            if (enemy.currentElement == ElementType.Electricity)
+            {
+                Debug.Log("OVERLOAD! 6 DMG to all enemies.");
+                List<Enemy> allEnemies = new List<Enemy>(WaveManager.Instance.ActiveEnemies);
+                foreach (Enemy e in allEnemies)
+                {
+                    if (e != null) e.TakeDamage(6);
+                }
+                CameraShake.Instance.Shake(0.3f, 0.3f);
+                reactionTriggered = true; 
+            }
+            else if (enemy.currentElement == ElementType.Water)
+            {
+                Debug.Log("VAPORIZE! 9 DMG to target.");
+                enemy.TakeDamage(9);
+                CameraShake.Instance.Shake(0.2f, 0.4f);
+                reactionTriggered = true; 
+            }
+
+            if (reactionTriggered)
+            {
+                // Consume status aura
+                if (enemy.currentStatusCircle != null)
+                {
+                    Destroy(enemy.currentStatusCircle);
+                    enemy.currentStatusCircle = null;
+                }
+                enemy.currentElement = null;
+                return true; 
+            }
         }
 
-        if (spellHistory.Count < 2) return;
+        // COMBOS 
+        if (spellHistory.Count < 2) return false;
 
         SpellRecord[] history = spellHistory.ToArray();
         SpellRecord first = history[0];
         SpellRecord second = history[1];
 
-        // Combo: HoT 
         if (first.spellType == SpellType.Skill && first.element == ElementType.Water &&
             second.spellType == SpellType.Single && second.element == ElementType.Water)
         {
             ApplyHoT(2, 3);
         }
 
-        // Combo: AoE DoT
         if (first.spellType == SpellType.Skill && first.element == ElementType.Electricity &&
             second.spellType == SpellType.Single && second.element == ElementType.Electricity)
         {
             foreach (Enemy e in WaveManager.Instance.ActiveEnemies)
             {
-                GameObject mc = SpawnMagicCircle(e.transform, ElementType.Electricity, SpellType.Status, true);
-                AddDoT(e, ElementType.Electricity, 1, 3, mc);
+                if (e != null)
+                {
+                    AddDoT(e, ElementType.Electricity, 1, 3, null);
+                }
             }
         }
-    }
 
+        return false; 
+    }
     GameObject SpawnMagicCircle(Transform enemyTransform, ElementType element, SpellType spellType, bool persistent = false)
     {
 
@@ -292,11 +357,11 @@ public class PlayerManager : MonoBehaviour
             magicCircleComponent.SetColor(element);
         }
 
-        // NEW: If it's the Electricity Status, spawn the Charge VFX as a child
+        // If Electricity Status, spawn the Charge VFX as a child
         if (persistent && element == ElementType.Electricity && chargePrefab != null)
         {
             GameObject charge = Instantiate(chargePrefab, mc.transform.position, Quaternion.identity);
-            charge.transform.SetParent(mc.transform); // Attach it to the circle
+            charge.transform.SetParent(mc.transform); 
         }
 
         return mc;
@@ -381,31 +446,6 @@ public class PlayerManager : MonoBehaviour
             ElementType.Electricity => 2,
             _ => 1
         };
-    }
-
-    void HandleReaction(Enemy enemy, ElementType element)
-    {
-        if (enemy.currentStatusCircle != null)
-            {
-                MagicCircle mcScript = enemy.currentStatusCircle.GetComponent<MagicCircle>();
-                if (mcScript != null) 
-                    mcScript.DeactivateAndDestroy();
-                else 
-                    Destroy(enemy.currentStatusCircle);
-
-                enemy.currentStatusCircle = null; 
-            }
-
-        if (activeDoTs.ContainsKey(enemy))
-            {
-                
-                activeDoTs.Remove(enemy);
-            }
-        if (element == ElementType.Water) enemy.TakeDamage(4);
-        if (element == ElementType.Electricity)
-        {
-            foreach (Enemy e in WaveManager.Instance.ActiveEnemies) e.TakeDamage(2);
-        }
     }
 
     IEnumerator EndTurnAfterDelay(float delay)

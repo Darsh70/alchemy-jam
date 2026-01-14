@@ -48,6 +48,8 @@ public class TurnManager : MonoBehaviour
     {
         if (currentState != TurnState.PlayerTurn) return;
         Debug.Log("End player turn");
+        currentState = TurnState.Busy;
+        Debug.Log("End player turn - Transitioning...");
   
         StartCoroutine(EnemyTurnRoutine());
     }
@@ -55,7 +57,7 @@ public class TurnManager : MonoBehaviour
     // ----- ENEMY TURN -----
     IEnumerator EnemyTurnRoutine()
     {
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.5f);
         currentState = TurnState.EnemyTurn;
         Debug.Log("Enemy turn started");
 
@@ -72,10 +74,12 @@ public class TurnManager : MonoBehaviour
                 playerManager.TickEnemyDoTs(enemy);
             }
 
+            yield return new WaitForSeconds(0.6f);
+
             // Check if the DoT killed the enemy. If so, skip their turn.
             if (enemy == null || enemy.health <= 0)
             {
-                yield return new WaitForSeconds(0.3f); // Brief pause to show they died from DoT
+                yield return new WaitForSeconds(0.3f);
                 continue;
             }
 
@@ -85,7 +89,7 @@ public class TurnManager : MonoBehaviour
             yield return enemy.PerformTurn();
             
             // Small pause between different enemies acting
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.4f);
         }
 
         StartPlayerTurn();

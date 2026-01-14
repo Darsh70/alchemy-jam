@@ -1,0 +1,508 @@
+fileFormatVersion: 2
+guid: 02987598cbcdc4defa6ecd7a57b8f5c3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3670985326752790920
+    second: zap_0
+  - first:
+      213: -6709335280832209550
+    second: zap_1
+  - first:
+      213: -5603423155141934365
+    second: zap_2
+  - first:
+      213: 1979340517016572396
+    second: zap_3
+  - first:
+      213: 6621814770937187832
+    second: zap_4
+  - first:
+      213: 2624778004085894101
+    second: zap_5
+  - first:
+      213: 4500227995741635815
+    second: zap_6
+  - first:
+      213: -9159698076463852813
+    second: zap_7
+  - first:
+      213: 4344500110706531379
+    second: zap_8
+  - first:
+      213: 8833128793672850115
+    second: zap_9
+  - first:
+      213: -2624101651700179155
+    second: zap_10
+  - first:
+      213: -6819515243996347962
+    second: zap_11
+  - first:
+      213: 6913654818440056720
+    second: zap_12
+  - first:
+      213: 898827998200245450
+    second: zap_13
+  - first:
+      213: 4922031953589946322
+    second: zap_14
+  - first:
+      213: 3114363353544460889
+    second: zap_15
+  - first:
+      213: -4095341414085230031
+    second: zap_16
+  - first:
+      213: 1002727542696311239
+    second: zap_17
+  - first:
+      213: -2733695659511567155
+    second: zap_18
+  - first:
+      213: -5600798916287278774
+    second: zap_19
+  - first:
+      213: 121308539508552440
+    second: zap_20
+  - first:
+      213: 17647305948646689
+    second: zap_21
+  - first:
+      213: -2403948684181523987
+    second: zap_22
+  - first:
+      213: -3452212492849892350
+    second: zap_23
+  - first:
+      213: 4028373899638528336
+    second: zap_24
+  - first:
+      213: -2686807473856593688
+    second: zap_25
+  - first:
+      213: 8825682920315420322
+    second: zap_26
+  - first:
+      213: -4762384431405971355
+    second: zap_27
+  - first:
+      213: 6039280746557999205
+    second: zap_28
+  - first:
+      213: -9102011001050923787
+    second: zap_29
+  - first:
+      213: -5862018500530708491
+    second: zap_30
+  - first:
+      213: 4300181131671118721
+    second: zap_31
+  - first:
+      213: -8793331175523730562
+    second: zap_32
+  - first:
+      213: 5558538559468344736
+    second: zap_33
+  - first:
+      213: -8752502994015706844
+    second: zap_34
+  - first:
+      213: -6006569826557056354
+    second: zap_35
+  - first:
+      213: 3987922429630107917
+    second: zap_36
+  - first:
+      213: -3369485122125598642
+    second: zap_37
+  - first:
+      213: -8364637721841327652
+    second: zap_38
+  - first:
+      213: -7838509247416102134
+    second: zap_39
+  - first:
+      213: -5128142667383485708
+    second: zap_40
+  - first:
+      213: 2040731343470488995
+    second: zap_41
+  - first:
+      213: -399104099833599044
+    second: zap_42
+  - first:
+      213: 3031711695402674876
+    second: zap_43
+  - first:
+      213: 6574949317326878406
+    second: zap_44
+  - first:
+      213: 3382594999521995764
+    second: zap_45
+  - first:
+      213: -6627772048232814702
+    second: zap_46
+  - first:
+      213: -3546559627879276695
+    second: zap_47
+  - first:
+      213: -2557266664017853790
+    second: zap_48
+  - first:
+      213: 5899552343526147506
+    second: zap_49
+  - first:
+      213: 8465402058484496729
+    second: zap_50
+  - first:
+      213: -9110477155673440817
+    second: zap_51
+  - first:
+      213: 3331229365764041608
+    second: zap_52
+  - first:
+      213: 527507777806402097
+    second: zap_53
+  - first:
+      213: -1959632518546874015
+    second: zap_54
+  - first:
+      213: 4413645187155481488
+    second: zap_55
+  - first:
+      213: 94358779959589385
+    second: zap_56
+  - first:
+      213: -3914275164145824558
+    second: zap_57
+  - first:
+      213: 4700078956072809179
+    second: zap_58
+  - first:
+      213: -2454139772700769473
+    second: zap_59
+  - first:
+      213: -758253243389073327
+    second: zap_60
+  - first:
+      213: -7780055148247574848
+    second: zap_61
+  - first:
+      213: -2833227708523596060
+    second: zap_62
+  - first:
+      213: 6194358875950451431
+    second: zap_63
+  - first:
+      213: -1964918240244437558
+    second: zap_64
+  - first:
+      213: 1546736268796080820
+    second: zap_65
+  - first:
+      213: 6067287650778678465
+    second: zap_66
+  - first:
+      213: 4200467392077328087
+    second: zap_67
+  - first:
+      213: 4405053695176616761
+    second: zap_68
+  - first:
+      213: 7157480170748719368
+    second: zap_69
+  - first:
+      213: -3029138386033902702
+    second: zap_70
+  - first:
+      213: -7367216026429576714
+    second: zap_71
+  - first:
+      213: -1787551363109758811
+    second: zap_72
+  - first:
+      213: 3184332134663105145
+    second: zap_73
+  - first:
+      213: -7163285695975245240
+    second: zap_74
+  - first:
+      213: -4462950911758635536
+    second: zap_75
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: zap_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88975c874b5f1f230800000000000000
+      internalID: 3670985326752790920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zap_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27d10031c17a3e2a0800000000000000
+      internalID: -6709335280832209550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zap_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e2019f1454ac32b0800000000000000
+      internalID: -5603423155141934365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zap_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce19f4696b7087b10800000000000000
+      internalID: 1979340517016572396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zap_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fd4526437965eb50800000000000000
+      internalID: 6621814770937187832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zap_5
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5db6cc320b51d6420800000000000000
+      internalID: 2624778004085894101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zap_6
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e4c276d485047e30800000000000000
+      internalID: 4500227995741635815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5db97fd5721374a30ba2465947c2809c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":7.0,"y":1.0},"gridSpriteSize":{"x":128.0,"y":128.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      zap_0: 3670985326752790920
+      zap_1: -6709335280832209550
+      zap_2: -5603423155141934365
+      zap_3: 1979340517016572396
+      zap_4: 6621814770937187832
+      zap_5: 2624778004085894101
+      zap_6: 4500227995741635815
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

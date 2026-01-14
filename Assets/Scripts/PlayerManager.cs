@@ -26,6 +26,11 @@ public class PlayerManager : MonoBehaviour
     public SpellMenu spellMenu;
     private int bombCounter = 0; 
 
+    [Header("VFX")]
+    public GameObject zapPrefab;
+    public GameObject lightningPrefab;
+    public GameObject chargePrefab;
+
     // ─────────────────────────────
     // Spell History (for combos)
     // ─────────────────────────────
@@ -87,7 +92,7 @@ public class PlayerManager : MonoBehaviour
     }
 
     // ─────────────────────────────
-    // Turn Ticks (Called by TurnManager)
+    // Turn Ticks
     // ─────────────────────────────
 
     public void TickHoTs()
@@ -180,7 +185,7 @@ public class PlayerManager : MonoBehaviour
             {
                 SpawnMagicCircle(targetEnemy.transform, element, spellType);
                 if (damage > 0)
-                    StartCoroutine(DelayedDamage(targetEnemy, damage, element));
+                    StartCoroutine(DelayedDamage(targetEnemy, damage, element, spellType));
 
                 targetEnemy.ApplyElement(element, spellType);
             }
@@ -188,7 +193,9 @@ public class PlayerManager : MonoBehaviour
             {
                 if (targetEnemy != null)
                 {
+                    
                     GameObject mc = SpawnMagicCircle(targetEnemy.transform, element, spellType, true);
+                    targetEnemy.currentStatusCircle = mc;
                     AddDoT(targetEnemy, element, 1, 3, mc);
                 }
             }
@@ -271,21 +278,35 @@ public class PlayerManager : MonoBehaviour
 
     GameObject SpawnMagicCircle(Transform enemyTransform, ElementType element, SpellType spellType, bool persistent = false)
     {
-        Vector3 offset = spellType == SpellType.Status ? Vector3.up * 0.6f : Vector3.down * 0.5f;
-        GameObject mc = Instantiate(magicCirclePrefab, enemyTransform.position + offset, Quaternion.identity);
-        
-        MagicCircle magicCircle = mc.GetComponent<MagicCircle>();
-        if (magicCircle != null) magicCircle.SetColor(element);
 
-        if (!persistent) Destroy(mc, 1.0f);
+        Vector3 offset = (spellType == SpellType.Status) ? Vector3.up * 1.2f : Vector3.down * 0.5f;
+        
+        GameObject mc = Instantiate(magicCirclePrefab, enemyTransform.position + offset, Quaternion.identity);
+
+        mc.transform.SetParent(enemyTransform);
+
+        MagicCircle magicCircleComponent = mc.GetComponent<MagicCircle>();
+        if (magicCircleComponent != null)
+        {
+            magicCircleComponent.isPersistent = persistent;
+            magicCircleComponent.SetColor(element);
+        }
+
+        // NEW: If it's the Electricity Status, spawn the Charge VFX as a child
+        if (persistent && element == ElementType.Electricity && chargePrefab != null)
+        {
+            GameObject charge = Instantiate(chargePrefab, mc.transform.position, Quaternion.identity);
+            charge.transform.SetParent(mc.transform); // Attach it to the circle
+        }
+
         return mc;
     }
 
-    IEnumerator DelayedDamage(Enemy enemy, int damage, ElementType element)
+    IEnumerator DelayedDamage(Enemy enemy, int damage, ElementType element, SpellType spellType)
     {
-        yield return _waitForSeconds1;
+        yield return new WaitForSeconds(0.3f); 
         if (enemy == null) yield break;
-        enemy.PlayTargetedAttackEffect(element);
+        enemy.PlayTargetedAttackEffect(element, spellType);
         enemy.TakeDamage(damage);
     }
 
@@ -364,6 +385,22 @@ public class PlayerManager : MonoBehaviour
 
     void HandleReaction(Enemy enemy, ElementType element)
     {
+        if (enemy.currentStatusCircle != null)
+            {
+                MagicCircle mcScript = enemy.currentStatusCircle.GetComponent<MagicCircle>();
+                if (mcScript != null) 
+                    mcScript.DeactivateAndDestroy();
+                else 
+                    Destroy(enemy.currentStatusCircle);
+
+                enemy.currentStatusCircle = null; 
+            }
+
+        if (activeDoTs.ContainsKey(enemy))
+            {
+                
+                activeDoTs.Remove(enemy);
+            }
         if (element == ElementType.Water) enemy.TakeDamage(4);
         if (element == ElementType.Electricity)
         {

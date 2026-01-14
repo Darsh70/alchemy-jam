@@ -3,9 +3,11 @@ using UnityEngine;
 
 public class MagicCircle : MonoBehaviour
 {
-    public float lifetime = 0.6f;
+    public float lifetime = 1f;
     public float scaleInTime = 0.1f;
     public float fadeOutTime = 0.2f;
+
+    [HideInInspector] public bool isPersistent = false;
 
     private SpriteRenderer sr;
 
@@ -18,9 +20,31 @@ public class MagicCircle : MonoBehaviour
     void Start()
     {
         StartCoroutine(ScaleIn());
-        StartCoroutine(FadeOut());
+        if (!isPersistent)
+        {
+            StartCoroutine(FadeOut());
+            Destroy(gameObject, lifetime);
+        }
 
-        Destroy(gameObject, lifetime);
+        // Destroy(gameObject, lifetime);
+    }
+    public void DeactivateAndDestroy()
+    {
+        StopAllCoroutines();
+        StartCoroutine(FadeAndDestroyRoutine());
+    }
+
+    private IEnumerator FadeAndDestroyRoutine()
+    {
+        float t = 0f;
+        Color startColor = sr.color;
+        while (t < fadeOutTime)
+        {
+            t += Time.deltaTime;
+            sr.color = Color.Lerp(startColor, new Color(startColor.r, startColor.g, startColor.b, 0), t / fadeOutTime);
+            yield return null;
+        }
+        Destroy(gameObject);
     }
 
     public void SetColor(ElementType element)

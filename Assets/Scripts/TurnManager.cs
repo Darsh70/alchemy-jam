@@ -48,13 +48,14 @@ public class TurnManager : MonoBehaviour
     {
         if (currentState != TurnState.PlayerTurn) return;
         Debug.Log("End player turn");
-
+  
         StartCoroutine(EnemyTurnRoutine());
     }
 
     // ----- ENEMY TURN -----
     IEnumerator EnemyTurnRoutine()
     {
+        yield return new WaitForSeconds(0.3f);
         currentState = TurnState.EnemyTurn;
         Debug.Log("Enemy turn started");
 

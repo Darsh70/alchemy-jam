@@ -1,0 +1,327 @@
+fileFormatVersion: 2
+guid: ac755da8ef7a14f249e897ef750ff276
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6234384571434838088
+    second: Lightning-Sheet_0
+  - first:
+      213: 3708518440659655514
+    second: Lightning-Sheet_1
+  - first:
+      213: 8267368080185392966
+    second: Lightning-Sheet_2
+  - first:
+      213: -6761916154339182967
+    second: Lightning-Sheet_3
+  - first:
+      213: 8618038126425293874
+    second: Lightning-Sheet_4
+  - first:
+      213: -8735525175672648915
+    second: Lightning-Sheet_5
+  - first:
+      213: -3173611162795436781
+    second: Lightning-Sheet_6
+  - first:
+      213: 4264822284793002143
+    second: Lightning-Sheet_7
+  - first:
+      213: 94868419758931574
+    second: Lightning-Sheet_8
+  - first:
+      213: -4120050166895119934
+    second: Lightning-Sheet_9
+  - first:
+      213: -8764336698614207295
+    second: Lightning-Sheet_10
+  - first:
+      213: 4831208921896659473
+    second: Lightning-Sheet_11
+  - first:
+      213: -6752909145318019304
+    second: Lightning-Sheet_12
+  - first:
+      213: -1604794127926915316
+    second: Lightning-Sheet_13
+  - first:
+      213: -4570185916475632291
+    second: Lightning-Sheet_14
+  - first:
+      213: -1576482232527753812
+    second: Lightning-Sheet_15
+  - first:
+      213: 4739417152972570258
+    second: Lightning-Sheet_16
+  - first:
+      213: -8662504789460551717
+    second: Lightning-Sheet_17
+  - first:
+      213: 711851334714916731
+    second: Lightning-Sheet_18
+  - first:
+      213: -9129055209983546872
+    second: Lightning-Sheet_19
+  - first:
+      213: -2233406645037769279
+    second: Lightning-Sheet_20
+  - first:
+      213: 5732363962146505619
+    second: Lightning-Sheet_21
+  - first:
+      213: -355779978043827692
+    second: Lightning-Sheet_22
+  - first:
+      213: 5067933939173622546
+    second: Lightning-Sheet_23
+  - first:
+      213: -8855334178019333460
+    second: Lightning-Sheet_24
+  - first:
+      213: -1919833432382237075
+    second: Lightning-Sheet_25
+  - first:
+      213: 519274104251635602
+    second: Lightning-Sheet_26
+  - first:
+      213: -4141074395859979743
+    second: Lightning-Sheet_27
+  - first:
+      213: 4302792709658195795
+    second: Lightning-Sheet_28
+  - first:
+      213: -1094207625926615321
+    second: Lightning-Sheet_29
+  - first:
+      213: 5886898832699040077
+    second: Lightning-Sheet_30
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Lightning-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 256
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b7537273440b79a0800000000000000
+      internalID: -6234384571434838088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 256
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5b118a8fdd477330800000000000000
+      internalID: 3708518440659655514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 256
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64f7ade67779bb270800000000000000
+      internalID: 8267368080185392966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 256
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98633a37519d822a0800000000000000
+      internalID: -6761916154339182967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 128
+        height: 256
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2344a52040c699770800000000000000
+      internalID: 8618038126425293874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 3e670a10f7cd54df39aaed1729f1df86
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":5.0,"y":1.0},"gridSpriteSize":{"x":128.0,"y":256.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Lightning-Sheet_0: -6234384571434838088
+      Lightning-Sheet_1: 3708518440659655514
+      Lightning-Sheet_2: 8267368080185392966
+      Lightning-Sheet_3: -6761916154339182967
+      Lightning-Sheet_4: 8618038126425293874
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -132,7 +132,6 @@ public class Enemy : MonoBehaviour
             {
                 Vector3 magicCirclePos = transform.position + Vector3.down * 1f;
                 GameObject zap = Instantiate(PlayerManager.Instance.zapPrefab, magicCirclePos, Quaternion.identity);
-                CameraShake.Instance.Shake(0.1f, 0.05f);
             }
             else if (spellType == SpellType.Skill && PlayerManager.Instance.lightningPrefab != null)
             {
@@ -141,6 +140,23 @@ public class Enemy : MonoBehaviour
                 CameraShake.Instance.Shake(0.2f, 0.2f);
             }
             
+        }
+        if (element == ElementType.Water)
+        {
+            if (spellType == SpellType.Single && PlayerManager.Instance.waterBallPrefab != null)
+            {
+                Vector3 magicCirclePos = transform.position;
+                GameObject waterBall = Instantiate(PlayerManager.Instance.waterBallPrefab, magicCirclePos, Quaternion.identity);
+            }
+        }
+
+        if (element == ElementType.Bomb)
+        {
+            if (spellType == SpellType.Single && PlayerManager.Instance.bombPrefab != null)
+            {
+                Vector3 magicCirclePos = transform.position + Vector3.down * 0.8f;
+                GameObject bomb = Instantiate(PlayerManager.Instance.bombPrefab, magicCirclePos, Quaternion.identity);
+            }
         }
     }
 

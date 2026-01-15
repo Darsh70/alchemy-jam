@@ -1,0 +1,526 @@
+fileFormatVersion: 2
+guid: c633d23ae026f4ffea4c5f1134e0bc8d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -806958690467812972
+    second: Heal-Sheet_0
+  - first:
+      213: -515023698250744803
+    second: Heal-Sheet_1
+  - first:
+      213: 6791320389997409312
+    second: Heal-Sheet_2
+  - first:
+      213: 5657897520169920301
+    second: Heal-Sheet_3
+  - first:
+      213: 4317999298093431353
+    second: Heal-Sheet_4
+  - first:
+      213: -8249739807386521687
+    second: Heal-Sheet_5
+  - first:
+      213: 9122483374984134868
+    second: Heal-Sheet_6
+  - first:
+      213: 8511902109148706291
+    second: Heal-Sheet_7
+  - first:
+      213: -4628434887676251229
+    second: Heal-Sheet_8
+  - first:
+      213: -2701212672561708478
+    second: Heal-Sheet_9
+  - first:
+      213: 301832715197465149
+    second: Heal-Sheet_10
+  - first:
+      213: 691807471419004559
+    second: Heal-Sheet_11
+  - first:
+      213: 4953956115635901747
+    second: Heal-Sheet_12
+  - first:
+      213: 2680457549063934736
+    second: Heal-Sheet_13
+  - first:
+      213: 2002948859926371999
+    second: Heal-Sheet_14
+  - first:
+      213: 7882516178936939380
+    second: Heal-Sheet_15
+  - first:
+      213: 2925787312087755045
+    second: Heal-Sheet_16
+  - first:
+      213: 4245248952687791811
+    second: Heal-Sheet_17
+  - first:
+      213: -2621091072016900198
+    second: Heal-Sheet_18
+  - first:
+      213: 6502269630013474451
+    second: Heal-Sheet_19
+  - first:
+      213: 9001623298301946866
+    second: Heal-Sheet_20
+  - first:
+      213: 2329750337283576954
+    second: Heal-Sheet_21
+  - first:
+      213: 9038373882880530838
+    second: Heal-Sheet_22
+  - first:
+      213: 4701339194136776911
+    second: Heal-Sheet_23
+  - first:
+      213: -3090880972042714971
+    second: Heal-Sheet_24
+  - first:
+      213: 2323789072515782917
+    second: Heal-Sheet_25
+  - first:
+      213: -5106357481564506159
+    second: Heal-Sheet_26
+  - first:
+      213: -8685767783765984400
+    second: Heal-Sheet_27
+  - first:
+      213: 1099357664686597738
+    second: Heal-Sheet_28
+  - first:
+      213: 945394351383137578
+    second: Heal-Sheet_29
+  - first:
+      213: -5072007403609987503
+    second: Heal-Sheet_30
+  - first:
+      213: 42676970550763677
+    second: Heal-Sheet_31
+  - first:
+      213: 933959186699131623
+    second: Heal-Sheet_32
+  - first:
+      213: -269600400079121725
+    second: Heal-Sheet_33
+  - first:
+      213: -6285436279469181709
+    second: Heal-Sheet_34
+  - first:
+      213: -8427449311834603203
+    second: Heal-Sheet_35
+  - first:
+      213: -1953996230091201688
+    second: Heal-Sheet_36
+  - first:
+      213: 2599026403342035147
+    second: Heal-Sheet_37
+  - first:
+      213: 6900901750188913311
+    second: Heal-Sheet_38
+  - first:
+      213: -9173865293938525683
+    second: Heal-Sheet_39
+  - first:
+      213: 7970444221036182859
+    second: Heal-Sheet_40
+  - first:
+      213: -209185627075309342
+    second: Heal-Sheet_41
+  - first:
+      213: 5583166381060655098
+    second: Heal-Sheet_42
+  - first:
+      213: 9165236211541648596
+    second: Heal-Sheet_43
+  - first:
+      213: 2093013525734176079
+    second: Heal-Sheet_44
+  - first:
+      213: -1874093923257587777
+    second: Heal-Sheet_45
+  - first:
+      213: -5547494161996551615
+    second: Heal-Sheet_46
+  - first:
+      213: 6021742165854632147
+    second: Heal-Sheet_47
+  - first:
+      213: -1776129135737397554
+    second: Heal-Sheet_48
+  - first:
+      213: 4950830771334392260
+    second: Heal-Sheet_49
+  - first:
+      213: -85147438388305282
+    second: Heal-Sheet_50
+  - first:
+      213: -7283968068125562805
+    second: Heal-Sheet_51
+  - first:
+      213: 8605222422401302031
+    second: Heal-Sheet_52
+  - first:
+      213: 5744302272625560651
+    second: Heal-Sheet_53
+  - first:
+      213: 3057277744725472629
+    second: Heal-Sheet_54
+  - first:
+      213: 5904984327012335498
+    second: Heal-Sheet_55
+  - first:
+      213: -4436685709418381441
+    second: Heal-Sheet_56
+  - first:
+      213: -2586053351397959248
+    second: Heal-Sheet_57
+  - first:
+      213: -6073749942432447582
+    second: Heal-Sheet_58
+  - first:
+      213: 3894997655365925945
+    second: Heal-Sheet_59
+  - first:
+      213: 1835388138034826638
+    second: Heal-Sheet_60
+  - first:
+      213: 1575821319878273646
+    second: Heal-Sheet_61
+  - first:
+      213: 5837705532736498269
+    second: Heal-Sheet_62
+  - first:
+      213: -4940751239985244248
+    second: Heal-Sheet_63
+  - first:
+      213: 9059411292791706581
+    second: Heal-Sheet_64
+  - first:
+      213: -9089127902181820234
+    second: Heal-Sheet_65
+  - first:
+      213: -3683786733196059843
+    second: Heal-Sheet_66
+  - first:
+      213: -1980958504147766356
+    second: Heal-Sheet_67
+  - first:
+      213: -2771048768444937174
+    second: Heal-Sheet_68
+  - first:
+      213: 5398432237464272499
+    second: Heal-Sheet_69
+  - first:
+      213: -4290953949360162587
+    second: Heal-Sheet_70
+  - first:
+      213: -3113305870729939179
+    second: Heal-Sheet_71
+  - first:
+      213: 2059707466032625744
+    second: Heal-Sheet_72
+  - first:
+      213: 8110519285056591456
+    second: Heal-Sheet_73
+  - first:
+      213: -2416353088786662327
+    second: Heal-Sheet_74
+  - first:
+      213: -8848110107264764814
+    second: Heal-Sheet_75
+  - first:
+      213: 4875018479029305183
+    second: Heal-Sheet_76
+  - first:
+      213: 9068579651922131275
+    second: Heal-Sheet_77
+  - first:
+      213: 3626771799122612284
+    second: Heal-Sheet_78
+  - first:
+      213: 5266764852104012262
+    second: Heal-Sheet_79
+  - first:
+      213: -202838827876751653
+    second: Heal-Sheet_80
+  - first:
+      213: 3226406310569038605
+    second: Heal-Sheet_81
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Heal-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4996042b85b1dc4f0800000000000000
+      internalID: -806958690467812972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heal-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1c3bd6dca44ad8f0800000000000000
+      internalID: -515023698250744803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heal-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 024b9a9a9ed9f3e50800000000000000
+      internalID: 6791320389997409312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heal-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d27aa4951d3e48e40800000000000000
+      internalID: 5657897520169920301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heal-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93abe3fdb7d9ceb30800000000000000
+      internalID: 4317999298093431353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heal-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9afa35baa59038d80800000000000000
+      internalID: -8249739807386521687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heal-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d0065beb42999e70800000000000000
+      internalID: 9122483374984134868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 8d5812b6759c5464a899b2d4b51f1449
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":7.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":1.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":2,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Heal-Sheet_0: -806958690467812972
+      Heal-Sheet_1: -515023698250744803
+      Heal-Sheet_2: 6791320389997409312
+      Heal-Sheet_3: 5657897520169920301
+      Heal-Sheet_4: 4317999298093431353
+      Heal-Sheet_5: -8249739807386521687
+      Heal-Sheet_6: 9122483374984134868
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

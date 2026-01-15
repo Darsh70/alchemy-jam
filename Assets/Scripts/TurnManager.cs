@@ -57,7 +57,7 @@ public class TurnManager : MonoBehaviour
     // ----- ENEMY TURN -----
     IEnumerator EnemyTurnRoutine()
     {
-        yield return new WaitForSeconds(0.5f);
+        //yield return new WaitForSeconds(0.2f);
         currentState = TurnState.EnemyTurn;
         Debug.Log("Enemy turn started");
 
@@ -89,7 +89,7 @@ public class TurnManager : MonoBehaviour
             yield return enemy.PerformTurn();
             
             // Small pause between different enemies acting
-            yield return new WaitForSeconds(0.4f);
+            //yield return new WaitForSeconds(0.2f);
         }
 
         StartPlayerTurn();

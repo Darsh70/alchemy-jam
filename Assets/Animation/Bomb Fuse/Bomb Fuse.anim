@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ZAP
+  m_Name: Bomb Fuse
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,19 +21,17 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 3670985326752790920, guid: 02987598cbcdc4defa6ecd7a57b8f5c3, type: 3}
+      value: {fileID: -4202280091329085417, guid: 4bd6fcd17e539443c80eccd430f6e6f7, type: 3}
     - time: 0.083333336
-      value: {fileID: -6709335280832209550, guid: 02987598cbcdc4defa6ecd7a57b8f5c3, type: 3}
+      value: {fileID: 3476750301677970644, guid: 4bd6fcd17e539443c80eccd430f6e6f7, type: 3}
     - time: 0.16666667
-      value: {fileID: -5603423155141934365, guid: 02987598cbcdc4defa6ecd7a57b8f5c3, type: 3}
+      value: {fileID: 6388151689159046473, guid: 4bd6fcd17e539443c80eccd430f6e6f7, type: 3}
     - time: 0.25
-      value: {fileID: 1979340517016572396, guid: 02987598cbcdc4defa6ecd7a57b8f5c3, type: 3}
+      value: {fileID: 4500268641487853479, guid: 4bd6fcd17e539443c80eccd430f6e6f7, type: 3}
     - time: 0.33333334
-      value: {fileID: 6621814770937187832, guid: 02987598cbcdc4defa6ecd7a57b8f5c3, type: 3}
+      value: {fileID: -273158526353267944, guid: 4bd6fcd17e539443c80eccd430f6e6f7, type: 3}
     - time: 0.41666666
-      value: {fileID: 2624778004085894101, guid: 02987598cbcdc4defa6ecd7a57b8f5c3, type: 3}
-    - time: 0.5
-      value: {fileID: 4500227995741635815, guid: 02987598cbcdc4defa6ecd7a57b8f5c3, type: 3}
+      value: {fileID: -3831930860005386216, guid: 4bd6fcd17e539443c80eccd430f6e6f7, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -56,19 +54,18 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 3670985326752790920, guid: 02987598cbcdc4defa6ecd7a57b8f5c3, type: 3}
-    - {fileID: -6709335280832209550, guid: 02987598cbcdc4defa6ecd7a57b8f5c3, type: 3}
-    - {fileID: -5603423155141934365, guid: 02987598cbcdc4defa6ecd7a57b8f5c3, type: 3}
-    - {fileID: 1979340517016572396, guid: 02987598cbcdc4defa6ecd7a57b8f5c3, type: 3}
-    - {fileID: 6621814770937187832, guid: 02987598cbcdc4defa6ecd7a57b8f5c3, type: 3}
-    - {fileID: 2624778004085894101, guid: 02987598cbcdc4defa6ecd7a57b8f5c3, type: 3}
-    - {fileID: 4500227995741635815, guid: 02987598cbcdc4defa6ecd7a57b8f5c3, type: 3}
+    - {fileID: -4202280091329085417, guid: 4bd6fcd17e539443c80eccd430f6e6f7, type: 3}
+    - {fileID: 3476750301677970644, guid: 4bd6fcd17e539443c80eccd430f6e6f7, type: 3}
+    - {fileID: 6388151689159046473, guid: 4bd6fcd17e539443c80eccd430f6e6f7, type: 3}
+    - {fileID: 4500268641487853479, guid: 4bd6fcd17e539443c80eccd430f6e6f7, type: 3}
+    - {fileID: -273158526353267944, guid: 4bd6fcd17e539443c80eccd430f6e6f7, type: 3}
+    - {fileID: -3831930860005386216, guid: 4bd6fcd17e539443c80eccd430f6e6f7, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.5833333
+    m_StopTime: 0.5
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -88,8 +85,8 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.25
-    functionName: TriggerShake
+  - time: 0.41666666
+    functionName: Explode
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

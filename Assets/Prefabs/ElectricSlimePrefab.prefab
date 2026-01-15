@@ -195,7 +195,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5586193748501230734
 Transform:
   m_ObjectHideFlags: 0
@@ -481,6 +481,7 @@ MonoBehaviour:
   attackDamage: 4
   enemyType: 2
   healthBarFill: {fileID: 2871228156865973390}
+  currentStatusCircle: {fileID: 0}
 --- !u!114 &548675124978988287
 MonoBehaviour:
   m_ObjectHideFlags: 0

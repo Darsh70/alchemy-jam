@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,6 +21,8 @@ public class PlayerManager : MonoBehaviour
     [Header("UI")]
     public Image healthBarFill;
     public Image[] actionPointsIcons;
+    public Sprite activeAPSprite;
+    public Sprite emptyAPSprite;
 
     [Header("Spells")]
     public GameObject magicCirclePrefab;
@@ -31,6 +34,14 @@ public class PlayerManager : MonoBehaviour
     public GameObject lightningPrefab;
     public GameObject chargePrefab;
     public GameObject dotPrefab;
+    public GameObject waterBallPrefab;
+    public GameObject rainPrefab;
+    public GameObject bombPrefab;
+
+    [Header("UI VFX")]
+    public Image healGlowImage;
+
+
 
     // ─────────────────────────────
     // Spell History (for combos)
@@ -225,8 +236,15 @@ public class PlayerManager : MonoBehaviour
             {
                 // Spawn standard magic circle (non-persistent)
                 SpawnMagicCircle(targetEnemy.transform, element, spellType);
+                targetEnemy.PlayTargetedAttackEffect(element, spellType);
+                float delay = 0.3f;
+                if (element == ElementType.Bomb && spellType == SpellType.Single)
+                {
+                    // Frame 7 divided by 12 FPS = ~0.58 seconds
+                    delay = 7f / 12f; 
+                }
                 
-                StartCoroutine(DelayedDamage(targetEnemy, damage, element, spellType));
+                StartCoroutine(DelayedDamage(targetEnemy, damage, element, spellType, delay));
 
                 targetEnemy.ApplyElement(element, spellType);
             }
@@ -344,7 +362,7 @@ public class PlayerManager : MonoBehaviour
     GameObject SpawnMagicCircle(Transform enemyTransform, ElementType element, SpellType spellType, bool persistent = false)
     {
 
-        Vector3 offset = (spellType == SpellType.Status) ? Vector3.up * 1.2f : Vector3.down * 0.5f;
+        Vector3 offset = (spellType == SpellType.Status) ? Vector3.up * 1.8f : Vector3.down * 0.5f;
         
         GameObject mc = Instantiate(magicCirclePrefab, enemyTransform.position + offset, Quaternion.identity);
 
@@ -363,15 +381,19 @@ public class PlayerManager : MonoBehaviour
             GameObject charge = Instantiate(chargePrefab, mc.transform.position, Quaternion.identity);
             charge.transform.SetParent(mc.transform); 
         }
+        else if (persistent && element == ElementType.Water && rainPrefab != null)
+        {
+            GameObject rain = Instantiate(rainPrefab, mc.transform.position, Quaternion.identity);
+            rain.transform.SetParent(mc.transform);
+        }
 
         return mc;
     }
 
-    IEnumerator DelayedDamage(Enemy enemy, int damage, ElementType element, SpellType spellType)
+    IEnumerator DelayedDamage(Enemy enemy, int damage, ElementType element, SpellType spellType,float delayTime)
     {
-        yield return new WaitForSeconds(0.3f); 
+        yield return new WaitForSeconds(delayTime); 
         if (enemy == null) yield break;
-        enemy.PlayTargetedAttackEffect(element, spellType);
         enemy.TakeDamage(damage);
     }
 
@@ -379,7 +401,44 @@ public class PlayerManager : MonoBehaviour
     {
         currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
         UpdateHealthUI();
+
+        if (healGlowImage != null)
+        {
+            StopCoroutine("HealGlowRoutine"); 
+            StartCoroutine(HealGlowRoutine());
+        }
+
     }
+
+    IEnumerator HealGlowRoutine()
+    {
+        float duration = 1f;
+        float elapsed = 0f;
+        Color color = healGlowImage.color;
+
+        // Fade In
+        while (elapsed < duration * 0.3f)
+        {
+            elapsed += Time.deltaTime;
+            color.a = Mathf.Lerp(0, 0.7f, elapsed / (duration * 0.3f));
+            healGlowImage.color = color;
+            yield return null;
+        }
+
+        // Fade Out
+        elapsed = 0f;
+        while (elapsed < duration * 0.7f)
+        {
+            elapsed += Time.deltaTime;
+            color.a = Mathf.Lerp(0.7f, 0, elapsed / (duration * 0.7f));
+            healGlowImage.color = color;
+            yield return null;
+        }
+
+        color.a = 0;
+        healGlowImage.color = color;
+    }
+
 
     void ApplyHoT(int amount, int turns)
     {
@@ -418,7 +477,14 @@ public class PlayerManager : MonoBehaviour
         for (int i = 0; i < actionPointsIcons.Length; i++)
         {
             int apIndexFromLeft = actionPointsIcons.Length - 1 - i;
-            actionPointsIcons[i].color = apIndexFromLeft < currentActionPoints ? Color.white : Color.red;
+            if (apIndexFromLeft < currentActionPoints) {
+            actionPointsIcons[i].sprite = activeAPSprite;
+            actionPointsIcons[i].color = Color.white;
+        } else {
+            actionPointsIcons[i].sprite = emptyAPSprite;
+
+            actionPointsIcons[i].color = new Color(1, 1, 1, 0.3f); 
+        }
         }
     }
 

@@ -234,14 +234,21 @@ public class PlayerManager : MonoBehaviour
             // Attack Spells 
             if (targetEnemy != null)
             {
-                // Spawn standard magic circle (non-persistent)
+
                 SpawnMagicCircle(targetEnemy.transform, element, spellType);
                 targetEnemy.PlayTargetedAttackEffect(element, spellType);
                 float delay = 0.3f;
                 if (element == ElementType.Bomb && spellType == SpellType.Single)
                 {
-                    // Frame 7 divided by 12 FPS = ~0.58 seconds
                     delay = 7f / 12f; 
+                }
+                else if (element == ElementType.Electricity && spellType == SpellType.Single)
+                {
+                    delay = 3f/12f;
+                }
+                else if (element == ElementType.Water && spellType == SpellType.Single)
+                {
+                    delay = 9f/12f;
                 }
                 
                 StartCoroutine(DelayedDamage(targetEnemy, damage, element, spellType, delay));

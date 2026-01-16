@@ -27,8 +27,14 @@ public class TurnManager : MonoBehaviour
 
     public void StartWave()
     {
+        if (GameManager.Instance != null && !GameManager.Instance.isGameActive) return;
         WaveManager.Instance.SpawnWave();
         StartPlayerTurn();
+    }
+        public void StopTurns()
+    {
+        currentState = TurnState.Stopped;
+        StopAllCoroutines(); // Stops the enemy turn immediately 
     }
 
     // ----- PLAYER TURN ------
@@ -66,6 +72,7 @@ public class TurnManager : MonoBehaviour
 
         foreach (Enemy enemy in enemies)
         {
+            if (currentState == TurnState.Stopped) yield break;
             if (enemy == null) continue;
 
             // Process Damage-over-Time for this specific enemy
@@ -95,9 +102,4 @@ public class TurnManager : MonoBehaviour
         StartPlayerTurn();
     }
 
-    public void GameOver()
-    {
-        currentState = TurnState.None;
-        Debug.Log("Game Over");
-    }
 }

@@ -88,6 +88,9 @@ public class WaveManager : MonoBehaviour
 
         if (ActiveEnemies.Count == 0)
         {
+            if (GameManager.Instance != null)
+                GameManager.Instance.AddWaveCleared();
+
             currentWave++;
             Debug.Log($"Wave {currentWave} starting...");
             SpawnWave();

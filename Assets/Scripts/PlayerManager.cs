@@ -126,10 +126,8 @@ public class PlayerManager : MonoBehaviour
         List<DoT> dots = activeDoTs[enemy];
         for (int i = dots.Count - 1; i >= 0; i--)
         {
-            // 1. Apply the damage
             enemy.TakeDamage(dots[i].damage);
 
-            // 2. Spawn the DoT VFX
             if (dotPrefab != null)
             {
 
@@ -169,6 +167,10 @@ public class PlayerManager : MonoBehaviour
     // ─────────────────────────────
     public void CastSpell(ElementType element, SpellType spellType)
     {
+        if (TurnManager.Instance.currentState == TurnState.Stopped) 
+            return;
+        
+        if (!GameManager.Instance.isGameActive) return;
 
         if (TurnManager.Instance.currentState != TurnState.PlayerTurn)
             return;
@@ -309,7 +311,9 @@ public class PlayerManager : MonoBehaviour
         {
             if (enemy.currentElement == ElementType.Electricity)
             {
+                FeedbackManager.Instance.ShowText("OVERLOAD!", enemy.transform.position, FeedbackManager.Instance.reactionColor);
                 Debug.Log("OVERLOAD! 6 DMG to all enemies.");
+                GameManager.Instance.LogReaction("Overload");
                 List<Enemy> allEnemies = new List<Enemy>(WaveManager.Instance.ActiveEnemies);
                 foreach (Enemy e in allEnemies)
                 {
@@ -320,8 +324,10 @@ public class PlayerManager : MonoBehaviour
             }
             else if (enemy.currentElement == ElementType.Water)
             {
+                FeedbackManager.Instance.ShowText("VAPORIZE!", enemy.transform.position, FeedbackManager.Instance.reactionColor);
                 Debug.Log("VAPORIZE! 9 DMG to target.");
                 enemy.TakeDamage(9);
+                GameManager.Instance.LogReaction("Vaporize");
                 CameraShake.Instance.Shake(0.2f, 0.4f);
                 reactionTriggered = true; 
             }
@@ -349,12 +355,18 @@ public class PlayerManager : MonoBehaviour
         if (first.spellType == SpellType.Skill && first.element == ElementType.Water &&
             second.spellType == SpellType.Single && second.element == ElementType.Water)
         {
+            string msg = "HYDRO THERAPY\n<size=70%>Regen: 3HP / 3 Turns</size>";
+            FeedbackManager.Instance.ShowText(msg, enemy.transform.position + Vector3.up * 1f, FeedbackManager.Instance.healComboColor);
+            GameManager.Instance.LogCombo("HydroTherapy");
             ApplyHoT(2, 3);
         }
 
         if (first.spellType == SpellType.Skill && first.element == ElementType.Electricity &&
             second.spellType == SpellType.Single && second.element == ElementType.Electricity)
         {
+            string msg = "ELECTRO FIELD\n<size=70%>3 DMG / 3 Turns</size>";
+            FeedbackManager.Instance.ShowText(msg, enemy.transform.position + Vector3.up * 1f, FeedbackManager.Instance.electricComboColor);
+            GameManager.Instance.LogCombo("ElectroField");
             foreach (Enemy e in WaveManager.Instance.ActiveEnemies)
             {
                 if (e != null)
@@ -466,7 +478,7 @@ public class PlayerManager : MonoBehaviour
         if (currentHealth <= 0)
         {
             currentHealth = 0;
-            TurnManager.Instance.GameOver();
+            GameManager.Instance.TriggerGameOver();
         }
         UpdateHealthUI();
     }
@@ -525,5 +537,34 @@ public class PlayerManager : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         TurnManager.Instance.EndPlayerTurn();
+    }
+
+    public bool IsReactionAvailable()
+    {
+        if (WaveManager.Instance == null) return false;
+
+        foreach (Enemy e in WaveManager.Instance.ActiveEnemies)
+        {
+            if (e != null && e.currentElement != null)
+                return true;
+        }
+        return false;
+    }
+
+    public bool IsComboReady(ElementType element, SpellType spellType)
+    {
+        if (spellHistory.Count == 0) return false;
+
+        // Get the last spell cast
+        SpellRecord lastSpell = spellHistory.ToArray()[spellHistory.Count - 1];
+
+        if (spellType == SpellType.Single && 
+            lastSpell.spellType == SpellType.Skill && 
+            lastSpell.element == element)
+        {
+            return true; 
+        }
+
+        return false;
     }
 }

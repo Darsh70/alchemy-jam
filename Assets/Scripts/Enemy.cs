@@ -18,6 +18,10 @@ public class Enemy : MonoBehaviour
     private Vector3 originalPosition;
     public GameObject currentStatusCircle;
 
+    [Header("Effect Positions")]
+    public float floorOffset = -0.5f; 
+    public float headOffset = 1.8f;  
+
     [Header("Status")]
     public ElementType? currentElement = null;
 
@@ -102,12 +106,16 @@ public class Enemy : MonoBehaviour
     {
         if (health <= 0) return;
 
-        // PlayHurtEffect();
         health -= damage;
         UpdateHealthUI();
         Debug.Log($"{gameObject.name} took {damage} damage. HP: {health}");
 
         if (health <= 0) Die();
+        else
+        {
+            animator.SetTrigger("Hurt");
+            PlayHurtEffect(); 
+        }
     }
 
     private IEnumerator HurtAnimationRoutine()
@@ -162,6 +170,8 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
+        animator.SetBool("IsDead", true);
+
         PlayDeathEffect();
 
         if (PlayerManager.Instance != null)
@@ -172,7 +182,7 @@ public class Enemy : MonoBehaviour
         if (WaveManager.Instance != null)
             WaveManager.Instance.OnEnemyKill(this);
 
-        Destroy(gameObject);
+        Destroy(gameObject, 1.5f); 
         Debug.Log($"{gameObject.name} defeated");
     }
 

@@ -1,0 +1,1148 @@
+fileFormatVersion: 2
+guid: 3979e890cc6f14e728df31a027cfc392
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3105355062889564467
+    second: Skeleton enemy-Sheet_0
+  - first:
+      213: -5772830371336583838
+    second: Skeleton enemy-Sheet_1
+  - first:
+      213: 5295363349406052668
+    second: Skeleton enemy-Sheet_2
+  - first:
+      213: -7859606455114128695
+    second: Skeleton enemy-Sheet_3
+  - first:
+      213: -4791506205860783994
+    second: Skeleton enemy-Sheet_4
+  - first:
+      213: -3860560693273111904
+    second: Skeleton enemy-Sheet_5
+  - first:
+      213: 599725599138258095
+    second: Skeleton enemy-Sheet_6
+  - first:
+      213: -5934707557264844259
+    second: Skeleton enemy-Sheet_7
+  - first:
+      213: 6779107233751341053
+    second: Skeleton enemy-Sheet_8
+  - first:
+      213: -7606494521602916835
+    second: Skeleton enemy-Sheet_9
+  - first:
+      213: -4006840895239595765
+    second: Skeleton enemy-Sheet_10
+  - first:
+      213: 6400194282661561524
+    second: Skeleton enemy-Sheet_11
+  - first:
+      213: 1365722565925780693
+    second: Skeleton enemy-Sheet_12
+  - first:
+      213: -4200670533077730709
+    second: Skeleton enemy-Sheet_13
+  - first:
+      213: 8747351372848863116
+    second: Skeleton enemy-Sheet_14
+  - first:
+      213: -8247216483380439536
+    second: Skeleton enemy-Sheet_15
+  - first:
+      213: 4578399629596586742
+    second: Skeleton enemy-Sheet_16
+  - first:
+      213: 6738765451908044701
+    second: Skeleton enemy-Sheet_17
+  - first:
+      213: 7531361312010072911
+    second: Skeleton enemy-Sheet_18
+  - first:
+      213: 7968726826593929902
+    second: Skeleton enemy-Sheet_19
+  - first:
+      213: 1321135918548095280
+    second: Skeleton enemy-Sheet_20
+  - first:
+      213: 785445903138193481
+    second: Skeleton enemy-Sheet_21
+  - first:
+      213: 2327465323919873841
+    second: Skeleton enemy-Sheet_22
+  - first:
+      213: 2079801844031019492
+    second: Skeleton enemy-Sheet_23
+  - first:
+      213: -681693063593170891
+    second: Skeleton enemy-Sheet_24
+  - first:
+      213: -4044665590768106557
+    second: Skeleton enemy-Sheet_25
+  - first:
+      213: -2546815940270246413
+    second: Skeleton enemy-Sheet_26
+  - first:
+      213: -259927692394891541
+    second: Skeleton enemy-Sheet_27
+  - first:
+      213: -8132880989972570578
+    second: Skeleton enemy-Sheet_28
+  - first:
+      213: 5966433429688774253
+    second: Skeleton enemy-Sheet_29
+  - first:
+      213: 7727623308812966956
+    second: Skeleton enemy-Sheet_30
+  - first:
+      213: 727894850860373344
+    second: Skeleton enemy-Sheet_31
+  - first:
+      213: -5357118195895370228
+    second: Skeleton enemy-Sheet_32
+  - first:
+      213: 5768597050435359031
+    second: Skeleton enemy-Sheet_33
+  - first:
+      213: 8240251541928637559
+    second: Skeleton enemy-Sheet_34
+  - first:
+      213: 1970819711536445546
+    second: Skeleton enemy-Sheet_35
+  - first:
+      213: 1502531293217459261
+    second: Skeleton enemy-Sheet_36
+  - first:
+      213: 8186203292055663222
+    second: Skeleton enemy-Sheet_37
+  - first:
+      213: -7618552767327121253
+    second: Skeleton enemy-Sheet_38
+  - first:
+      213: -5326223889706201958
+    second: Skeleton enemy-Sheet_39
+  - first:
+      213: 9118954932593747372
+    second: Skeleton enemy-Sheet_40
+  - first:
+      213: 8158481918456489873
+    second: Skeleton enemy-Sheet_41
+  - first:
+      213: 6255749730629910808
+    second: Skeleton enemy-Sheet_42
+  - first:
+      213: 3589722751482451387
+    second: Skeleton enemy-Sheet_43
+  - first:
+      213: -3363580134634016329
+    second: Skeleton enemy-Sheet_44
+  - first:
+      213: -3582292696133935768
+    second: Skeleton enemy-Sheet_45
+  - first:
+      213: 6160075195778630147
+    second: Skeleton enemy-Sheet_46
+  - first:
+      213: -5919073614072110695
+    second: Skeleton enemy-Sheet_47
+  - first:
+      213: -5925826754659107456
+    second: Skeleton enemy-Sheet_48
+  - first:
+      213: -8395958633756586384
+    second: Skeleton enemy-Sheet_49
+  - first:
+      213: -310203448587858217
+    second: Skeleton enemy-Sheet_50
+  - first:
+      213: 3759081140540525666
+    second: Skeleton enemy-Sheet_51
+  - first:
+      213: -8425365956520458173
+    second: Skeleton enemy-Sheet_52
+  - first:
+      213: -4971899474778445398
+    second: Skeleton enemy-Sheet_53
+  - first:
+      213: 4999347291269448348
+    second: Skeleton enemy-Sheet_54
+  - first:
+      213: -7692284386981105924
+    second: Skeleton enemy-Sheet_55
+  - first:
+      213: 1846475020514502329
+    second: Skeleton enemy-Sheet_56
+  - first:
+      213: 1803339074965085559
+    second: Skeleton enemy-Sheet_57
+  - first:
+      213: 8440308621512016129
+    second: Skeleton enemy-Sheet_58
+  - first:
+      213: -6411654411365607421
+    second: Skeleton enemy-Sheet_59
+  - first:
+      213: 5716934914474796540
+    second: Skeleton enemy-Sheet_60
+  - first:
+      213: -2241438262783174775
+    second: Skeleton enemy-Sheet_61
+  - first:
+      213: -3679393918097127576
+    second: Skeleton enemy-Sheet_62
+  - first:
+      213: -2259049860345165608
+    second: Skeleton enemy-Sheet_63
+  - first:
+      213: 297846760997233996
+    second: Skeleton enemy-Sheet_64
+  - first:
+      213: 1335015357943609027
+    second: Skeleton enemy-Sheet_65
+  - first:
+      213: 7671509610537498426
+    second: Skeleton enemy-Sheet_66
+  - first:
+      213: 4966745264422512351
+    second: Skeleton enemy-Sheet_67
+  - first:
+      213: 6567079031652152011
+    second: Skeleton enemy-Sheet_68
+  - first:
+      213: 3053476938537728223
+    second: Skeleton enemy-Sheet_69
+  - first:
+      213: 4678699893526167026
+    second: Skeleton enemy-Sheet_70
+  - first:
+      213: -8246707537535102930
+    second: Skeleton enemy-Sheet_71
+  - first:
+      213: -1916911035059701274
+    second: Skeleton enemy-Sheet_72
+  - first:
+      213: 427928110318040193
+    second: Skeleton enemy-Sheet_73
+  - first:
+      213: 8913705783523735133
+    second: Skeleton enemy-Sheet_74
+  - first:
+      213: -8004552329241444842
+    second: Skeleton enemy-Sheet_75
+  - first:
+      213: -7685419000187425779
+    second: Skeleton enemy-Sheet_76
+  - first:
+      213: -2158035338213245870
+    second: Skeleton enemy-Sheet_77
+  - first:
+      213: 694990889229424406
+    second: Skeleton enemy-Sheet_78
+  - first:
+      213: -3668262630383045296
+    second: Skeleton enemy-Sheet_79
+  - first:
+      213: 9204684754638231394
+    second: Skeleton enemy-Sheet_80
+  - first:
+      213: 3737457905628913912
+    second: Skeleton enemy-Sheet_81
+  - first:
+      213: -6101816608003895393
+    second: Skeleton enemy-Sheet_82
+  - first:
+      213: 7722384085610240563
+    second: Skeleton enemy-Sheet_83
+  - first:
+      213: 836041885255561337
+    second: Skeleton enemy-Sheet_84
+  - first:
+      213: 1742185645319526020
+    second: Skeleton enemy-Sheet_85
+  - first:
+      213: 733131702570939336
+    second: Skeleton enemy-Sheet_86
+  - first:
+      213: 5421113123477589737
+    second: Skeleton enemy-Sheet_87
+  - first:
+      213: 8913096899287001439
+    second: Skeleton enemy-Sheet_88
+  - first:
+      213: 7039224255564620389
+    second: Skeleton enemy-Sheet_89
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Skeleton enemy-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3394ef01aff681b20800000000000000
+      internalID: 3105355062889564467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton enemy-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26585efec59c2efa0800000000000000
+      internalID: -5772830371336583838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton enemy-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3178f509e8ec7940800000000000000
+      internalID: 5295363349406052668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton enemy-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c22e8032911de290800000000000000
+      internalID: -7859606455114128695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton enemy-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68896940e76218db0800000000000000
+      internalID: -4791506205860783994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton enemy-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a2de9be0888c6ac0800000000000000
+      internalID: -3860560693273111904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton enemy-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fac18534147a25800800000000000000
+      internalID: 599725599138258095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton enemy-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1a176b8beea3ada0800000000000000
+      internalID: -5934707557264844259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton enemy-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df79702ac1a341e50800000000000000
+      internalID: 6779107233751341053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton enemy-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1e37e5988d407690800000000000000
+      internalID: -7606494521602916835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton enemy-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b095cb75f67d468c0800000000000000
+      internalID: -4006840895239595765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton enemy-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b447875ace02d850800000000000000
+      internalID: 6400194282661561524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton enemy-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dcbdb3107504f210800000000000000
+      internalID: 1365722565925780693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton enemy-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6a7371086834b5c0800000000000000
+      internalID: -4200670533077730709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton enemy-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c879e286ab5d46970800000000000000
+      internalID: 8747351372848863116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton enemy-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 016dc52dd400c8d80800000000000000
+      internalID: -8247216483380439536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton enemy-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f272e9a43eb98f30800000000000000
+      internalID: 4578399629596586742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton enemy-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9757a99977e48d50800000000000000
+      internalID: 6738765451908044701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton enemy-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f43fa7dd535c48860800000000000000
+      internalID: 7531361312010072911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton enemy-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eaac14324da969e60800000000000000
+      internalID: 7968726826593929902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton enemy-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03191154e1e955210800000000000000
+      internalID: 1321135918548095280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton enemy-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94086de23e676ea00800000000000000
+      internalID: 785445903138193481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton enemy-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13798437161dc4020800000000000000
+      internalID: 2327465323919873841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton enemy-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 1472
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e9dba402c0fcdc10800000000000000
+      internalID: 2079801844031019492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton enemy-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5386eaa35c32a86f0800000000000000
+      internalID: -681693063593170891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton enemy-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c3850323167ed7c0800000000000000
+      internalID: -4044665590768106557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton enemy-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f5b3eb5564e7acd0800000000000000
+      internalID: -2546815940270246413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton enemy-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 1728
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be6f383142d846cf0800000000000000
+      internalID: -259927692394891541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton enemy-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2e582854d3322f80800000000000000
+      internalID: -8132880989972570578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton enemy-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 1856
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6e6d90c7970dc250800000000000000
+      internalID: 5966433429688774253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton enemy-Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2c53d7e4780e3b60800000000000000
+      internalID: 7727623308812966956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton enemy-Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 1984
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0655e53a2800a1a00800000000000000
+      internalID: 727894850860373344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton enemy-Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0effd15261b7a5b0800000000000000
+      internalID: -5357118195895370228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 73e866fe6117c4c1d9aec6bd00ad8b5d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":33.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Skeleton enemy-Sheet_0: 3105355062889564467
+      Skeleton enemy-Sheet_1: -5772830371336583838
+      Skeleton enemy-Sheet_10: -4006840895239595765
+      Skeleton enemy-Sheet_11: 6400194282661561524
+      Skeleton enemy-Sheet_12: 1365722565925780693
+      Skeleton enemy-Sheet_13: -4200670533077730709
+      Skeleton enemy-Sheet_14: 8747351372848863116
+      Skeleton enemy-Sheet_15: -8247216483380439536
+      Skeleton enemy-Sheet_16: 4578399629596586742
+      Skeleton enemy-Sheet_17: 6738765451908044701
+      Skeleton enemy-Sheet_18: 7531361312010072911
+      Skeleton enemy-Sheet_19: 7968726826593929902
+      Skeleton enemy-Sheet_2: 5295363349406052668
+      Skeleton enemy-Sheet_20: 1321135918548095280
+      Skeleton enemy-Sheet_21: 785445903138193481
+      Skeleton enemy-Sheet_22: 2327465323919873841
+      Skeleton enemy-Sheet_23: 2079801844031019492
+      Skeleton enemy-Sheet_24: -681693063593170891
+      Skeleton enemy-Sheet_25: -4044665590768106557
+      Skeleton enemy-Sheet_26: -2546815940270246413
+      Skeleton enemy-Sheet_27: -259927692394891541
+      Skeleton enemy-Sheet_28: -8132880989972570578
+      Skeleton enemy-Sheet_29: 5966433429688774253
+      Skeleton enemy-Sheet_3: -7859606455114128695
+      Skeleton enemy-Sheet_30: 7727623308812966956
+      Skeleton enemy-Sheet_31: 727894850860373344
+      Skeleton enemy-Sheet_32: -5357118195895370228
+      Skeleton enemy-Sheet_4: -4791506205860783994
+      Skeleton enemy-Sheet_5: -3860560693273111904
+      Skeleton enemy-Sheet_6: 599725599138258095
+      Skeleton enemy-Sheet_7: -5934707557264844259
+      Skeleton enemy-Sheet_8: 6779107233751341053
+      Skeleton enemy-Sheet_9: -7606494521602916835
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

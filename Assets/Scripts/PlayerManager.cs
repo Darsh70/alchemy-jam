@@ -380,8 +380,27 @@ public class PlayerManager : MonoBehaviour
     }
     GameObject SpawnMagicCircle(Transform enemyTransform, ElementType element, SpellType spellType, bool persistent = false)
     {
+        Enemy e = enemyTransform.GetComponent<Enemy>();
 
-        Vector3 offset = (spellType == SpellType.Status) ? Vector3.up * 1.8f : Vector3.down * 0.5f;
+        Vector3 offset = Vector3.zero;
+
+        if (e != null)
+        {
+            // Use the enemy's specific settings
+            if (spellType == SpellType.Status)
+            {
+                offset = Vector3.up * e.headOffset;
+            }
+            else
+            {
+                offset = Vector3.up * e.floorOffset; // usually a negative number
+            }
+        }
+        else
+        {
+            // Fallback default if script is missing
+            offset = (spellType == SpellType.Status) ? Vector3.up * 1.8f : Vector3.down * 0.5f;
+        }
         
         GameObject mc = Instantiate(magicCirclePrefab, enemyTransform.position + offset, Quaternion.identity);
 

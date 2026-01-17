@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections; 
 
 public class WaveManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class WaveManager : MonoBehaviour
     public int currentWave = 1;
     public Transform enemyParent;
     public List<GameObject> enemyPrefabs;
+    public float waveDelay = 2.0f; 
 
     private void Awake()
     {
@@ -53,6 +55,7 @@ public class WaveManager : MonoBehaviour
     {
         List<GameObject> possibleEnemies = new()
         {
+            enemyPrefabs[3],
             enemyPrefabs[0], 
             enemyPrefabs[1], 
             enemyPrefabs[2]  
@@ -88,13 +91,24 @@ public class WaveManager : MonoBehaviour
 
         if (ActiveEnemies.Count == 0)
         {
-            if (GameManager.Instance != null)
-                GameManager.Instance.AddWaveCleared();
-
-            currentWave++;
-            Debug.Log($"Wave {currentWave} starting...");
-            SpawnWave();
-            TurnManager.Instance.StartPlayerTurn();
+             StartCoroutine(PrepareNextWave());
         }
+    }
+    IEnumerator PrepareNextWave()
+    {
+        Debug.Log("Wave cleared! Waiting for next wave...");
+        
+        // Wait for 2 seconds (allows death animations to finish)
+        yield return new WaitForSeconds(waveDelay);
+
+        if (GameManager.Instance != null)
+            GameManager.Instance.AddWaveCleared();
+
+        currentWave++;
+        Debug.Log($"Wave {currentWave} starting...");
+        
+        SpawnWave();
+        
+        TurnManager.Instance.StartPlayerTurn();
     }
 }

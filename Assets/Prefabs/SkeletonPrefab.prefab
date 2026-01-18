@@ -515,7 +515,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   maxHealth: 20
   health: 20
-  attackDamage: 5
+  attackDamage: 2
   enemyType: 3
   healthBarFill: {fileID: 2871228156865973390}
   healthBarGhost: {fileID: 3669013170784960429}

@@ -51,7 +51,7 @@ public class Enemy : MonoBehaviour
             case EnemyType.FireSlime: maxHealth = 10; attackDamage = 3; break;
             case EnemyType.WaterSlime: maxHealth = 12; attackDamage = 2; break;
             case EnemyType.ElectricSlime: maxHealth = 10; attackDamage = 4; break;
-            case EnemyType.Skeleton: maxHealth = 20; attackDamage = 5; break;
+            case EnemyType.Skeleton: maxHealth = 20; attackDamage = 2; break;
             case EnemyType.Boss: maxHealth = 50; attackDamage = 10; break;
         }
     }
@@ -167,7 +167,7 @@ public class Enemy : MonoBehaviour
 
             PlayerManager.Instance.TakeDamage(attackDamage);
             
-            CameraShake.Instance.Shake(0.2f, 0.2f);
+            CameraShake.Instance.Shake(0.1f, 0.1f);
         }
     }
 

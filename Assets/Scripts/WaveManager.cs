@@ -55,10 +55,11 @@ public class WaveManager : MonoBehaviour
     {
         List<GameObject> possibleEnemies = new()
         {
-            enemyPrefabs[3],
-            enemyPrefabs[0], 
-            enemyPrefabs[1], 
-            enemyPrefabs[2]  
+            enemyPrefabs[3]
+            // enemyPrefabs[3],
+            // enemyPrefabs[0], 
+            // enemyPrefabs[1], 
+            // enemyPrefabs[2]  
         };
 
 

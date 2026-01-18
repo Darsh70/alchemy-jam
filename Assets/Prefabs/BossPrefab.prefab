@@ -266,6 +266,7 @@ GameObject:
   - component: {fileID: 3061530029517037211}
   - component: {fileID: 548675124978988287}
   - component: {fileID: -6757762851901704971}
+  - component: {fileID: 4984974208728660194}
   m_Layer: 0
   m_Name: BossPrefab
   m_TagString: Untagged
@@ -283,8 +284,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 8, y: 8, z: 0}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7755339546335769299}
   m_Father: {fileID: 0}
@@ -338,8 +339,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: -2424553518018739129, guid: fa4613c312d134206bc16decdf3e19c1, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -362,9 +363,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   maxHealth: 50
   health: 50
-  enemyType: 4
   attackDamage: 10
+  enemyType: 4
   healthBarFill: {fileID: 2871228156865973390}
+  currentStatusCircle: {fileID: 0}
+  floorOffset: -2.6
+  headOffset: 2.8
 --- !u!114 &548675124978988287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -378,7 +382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySelector
   sr: {fileID: 0}
-  normalColor: {r: 0, g: 0, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
   highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!58 &-6757762851901704971
 CircleCollider2D:
@@ -415,4 +419,26 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Radius: 0.14
+--- !u!95 &4984974208728660194
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8995748881601380219}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ec4ce1190abc14e72aed8a732a6560a5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

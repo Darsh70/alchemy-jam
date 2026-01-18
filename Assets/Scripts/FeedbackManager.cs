@@ -19,23 +19,55 @@ public class FeedbackManager : MonoBehaviour
     }
 
     public void ShowText(string message, Vector3 worldPosition, Color color)
-    {
-        if (floatingTextPrefab == null || gameCanvas == null) return;
-
-        Debug.Log($"Spawning Text: {message} at {worldPosition}");
+        {
+            if (floatingTextPrefab == null || gameCanvas == null) return;
 
 
-        GameObject go = Instantiate(floatingTextPrefab, gameCanvas.transform);
-        
+            GameObject go = Instantiate(floatingTextPrefab, gameCanvas.transform);
+            
 
-        Vector2 screenPosition = Camera.main.WorldToScreenPoint(worldPosition);
-        
+            go.transform.localScale = Vector3.one; 
 
-        screenPosition += new Vector2(0, 50f); 
+            if (Camera.main != null)
+            {
+                Vector3 screenPosition = Camera.main.WorldToScreenPoint(worldPosition);
 
-        go.transform.position = screenPosition;
+                float randomX = Random.Range(-50f, 50f);
+                
 
-        FloatingText ft = go.GetComponent<FloatingText>(); 
-        ft.Setup(message, color);
-    }
+                float randomY = Random.Range(50f, 120f); 
+
+
+                screenPosition.x += randomX;
+                screenPosition.y += randomY;
+
+                screenPosition.z = 0; 
+
+                go.transform.position = screenPosition;
+            }
+
+            FloatingText ft = go.GetComponent<FloatingText>(); 
+            if (ft != null) ft.Setup(message, color);
+        }
+
+    public void ShowScreenText(string message, Vector3 screenPosition, Color color)
+        {
+            if (floatingTextPrefab == null || gameCanvas == null) return;
+
+            GameObject go = Instantiate(floatingTextPrefab, gameCanvas.transform);
+            go.transform.localScale = Vector3.one;
+
+            float randomY = Random.Range(100f, 200f);
+            float randomX = Random.Range(-30f, 30f); 
+            
+            Vector3 offset = new Vector3(randomX, randomY, 0); 
+
+            go.transform.position = screenPosition + offset;
+
+            FloatingText ft = go.GetComponent<FloatingText>();
+            if (ft != null)
+            {
+                ft.Setup(message, color);
+            }
+        }
 }

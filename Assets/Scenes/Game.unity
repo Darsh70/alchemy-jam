@@ -1179,6 +1179,7 @@ MonoBehaviour:
   rainPrefab: {fileID: 4534810490676142837, guid: 2e8e71cec47124e989d7db7f86b3b7c5, type: 3}
   bombPrefab: {fileID: 2495144894890845552, guid: 7438d697822d74c7bb924b997286258b, type: 3}
   healGlowImage: {fileID: 940097829}
+  magePortrait: {fileID: 111626153}
 --- !u!4 &411221743
 Transform:
   m_ObjectHideFlags: 0

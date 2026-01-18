@@ -20,9 +20,15 @@ public class PlayerManager : MonoBehaviour
 
     [Header("UI")]
     public Image healthBarFill;
+    public Image healthBarGhost;
     public Image[] actionPointsIcons;
     public Sprite activeAPSprite;
     public Sprite emptyAPSprite;
+
+    private float ghostDelay = 0.5f;
+    private float ghostSpeed = 2f; 
+    private Coroutine healthRoutine;
+
 
     [Header("Spells")]
     public GameObject magicCirclePrefab;
@@ -40,6 +46,7 @@ public class PlayerManager : MonoBehaviour
 
     [Header("UI VFX")]
     public Image healGlowImage;
+    public RectTransform magePortrait; 
 
 
 
@@ -166,133 +173,158 @@ public class PlayerManager : MonoBehaviour
     // Core Casting Logic
     // ─────────────────────────────
     public void CastSpell(ElementType element, SpellType spellType)
-    {
-        if (TurnManager.Instance.currentState == TurnState.Stopped) 
-            return;
-        
-        if (!GameManager.Instance.isGameActive) return;
-
-        if (TurnManager.Instance.currentState != TurnState.PlayerTurn)
-            return;
-
-        if (spellType == SpellType.Ultimate && element == ElementType.Bomb && bombCounter < 3)
         {
-            Debug.Log($"Ultimate not ready. Charges: {bombCounter}/3");
-            return;
-        }
+            if (TurnManager.Instance.currentState == TurnState.Stopped) return;
+            if (!GameManager.Instance.isGameActive) return;
+            if (TurnManager.Instance.currentState != TurnState.PlayerTurn) return;
 
-        bool costsAP = spellType == SpellType.Skill || spellType == SpellType.Status;
-        bool endsTurn = spellType == SpellType.Single || spellType == SpellType.Skill;
-
-        if (costsAP && currentActionPoints <= 0)
-        {
-            Debug.Log("Out of AP");
-            return;
-        }
-
-
-        if (targetEnemy == null && WaveManager.Instance.ActiveEnemies.Count > 0)
-            targetEnemy = WaveManager.Instance.ActiveEnemies[0];
-
-        if (targetEnemy == null && spellType != SpellType.Status)
-        {
-            Debug.LogWarning("No enemies available");
-            return;
-        }
-
-        // Damage Calculation and Reaction Check
-        // Get base damage , then check if reaction overrides it
-        int damage = GetBaseDamage(element, spellType);
-        
-        RecordSpell(element, spellType);
-        
-        bool reactionTriggered = CheckComboOrReaction(targetEnemy, element, spellType);
-
-        if (reactionTriggered)
-        {
-            damage = 0; // If Overload/Vaporize, the Bomb deals 0 additional damage
-        }
-
-        Debug.Log($"Casting {spellType} {element}. Base Damage: {damage}");
-
-
-        if (spellType == SpellType.Skill && element == ElementType.Water)
-        {
-
-            Heal(3);
-        }
-        else if (spellType == SpellType.Status)
-        {
-            // Status Spells
-            if (targetEnemy != null)
+            if (spellType == SpellType.Ultimate && element == ElementType.Bomb && bombCounter < 3)
             {
-                GameObject mc = SpawnMagicCircle(targetEnemy.transform, element, spellType, true);
-                targetEnemy.currentStatusCircle = mc;
-                targetEnemy.ApplyElement(element, spellType);
+                Debug.Log($"Ultimate not ready. Charges: {bombCounter}/3");
+                return;
             }
-        }
-        else 
-        {
-            // Attack Spells 
-            if (targetEnemy != null)
-            {
 
-                SpawnMagicCircle(targetEnemy.transform, element, spellType);
-                targetEnemy.PlayTargetedAttackEffect(element, spellType);
-                float delay = 0.3f;
-                if (element == ElementType.Bomb && spellType == SpellType.Single)
+            bool costsAP = spellType == SpellType.Skill || spellType == SpellType.Status;
+            bool endsTurn = spellType == SpellType.Single || spellType == SpellType.Skill;
+
+            if (costsAP && currentActionPoints <= 0)
+            {
+                Debug.Log("Out of AP");
+                return;
+            }
+
+            if (targetEnemy == null && WaveManager.Instance.ActiveEnemies.Count > 0)
+                targetEnemy = WaveManager.Instance.ActiveEnemies[0];
+
+            if (targetEnemy == null && spellType != SpellType.Status)
+            {
+                Debug.LogWarning("No enemies available");
+                return;
+            }
+
+            // ---------------------------------------------------------
+            // FIX START: Save the element BEFORE CheckComboOrReaction wipes it!
+            // ---------------------------------------------------------
+            ElementType? storedReactionElement = null;
+            if (targetEnemy != null) 
+            {
+                storedReactionElement = targetEnemy.currentElement;
+            }
+            // ---------------------------------------------------------
+
+            int damage = GetBaseDamage(element, spellType);
+            
+            RecordSpell(element, spellType);
+            
+            // This function sets targetEnemy.currentElement to null if reaction happens!
+            bool reactionTriggered = CheckComboOrReaction(targetEnemy, element, spellType);
+
+            if (reactionTriggered)
+            {
+                damage = 0; 
+            }
+
+            Debug.Log($"Casting {spellType} {element}. Base Damage: {damage}");
+
+
+            if (spellType == SpellType.Skill && element == ElementType.Water)
+            {
+                Heal(3);
+            }
+            else if (spellType == SpellType.Status)
+            {
+                if (targetEnemy != null)
                 {
-                    delay = 7f / 12f; 
+                    GameObject mc = SpawnMagicCircle(targetEnemy.transform, element, spellType, true);
+                    targetEnemy.currentStatusCircle = mc;
+                    targetEnemy.ApplyElement(element, spellType);
                 }
-                else if (element == ElementType.Electricity && spellType == SpellType.Single)
+            }
+            else 
+            {
+                // Attack Spells 
+                if (targetEnemy != null)
                 {
-                    delay = 3f/12f;
-                }
-                else if (element == ElementType.Water && spellType == SpellType.Single)
-                {
-                    delay = 9f/12f;
-                }
+                    SpawnMagicCircle(targetEnemy.transform, element, spellType);
+
+                    // 1. Spawn the visual
+                    GameObject spellObject = targetEnemy.PlayTargetedAttackEffect(element, spellType);
                 
-                StartCoroutine(DelayedDamage(targetEnemy, damage, element, spellType, delay));
+                    // 2. CONFIGURE BOMB
+                    if (element == ElementType.Bomb && spellObject != null)
+                    {
+                        TriggerExplosion triggerScript = spellObject.GetComponent<TriggerExplosion>();
+                        
+                        // FIX: Check 'storedReactionElement' instead of 'targetEnemy.currentElement'
+                        if (triggerScript != null && storedReactionElement != null)
+                        {
+                            if (storedReactionElement == ElementType.Water)
+                            {
+                                triggerScript.SetReactionType(ReactionEffectType.Vaporize);
+                            }
+                            else if (storedReactionElement == ElementType.Electricity)
+                            {
+                                triggerScript.SetReactionType(ReactionEffectType.Overload);
+                            }
+                        }
+                    }
 
-                targetEnemy.ApplyElement(element, spellType);
+                    float delay = 0.3f;
+                    if (element == ElementType.Bomb && spellType == SpellType.Single)
+                    {
+                        delay = 7f / 12f; 
+                    }
+                    else if (element == ElementType.Electricity && spellType == SpellType.Single)
+                    {
+                        delay = 3f/12f;
+                    }
+                    else if (element == ElementType.Electricity && spellType == SpellType.Skill)
+                    {
+                        delay = 1f/12f;
+                    }
+                    else if (element == ElementType.Water && spellType == SpellType.Single)
+                    {
+                        delay = 9f/12f;
+                    }
+                    
+                    StartCoroutine(DelayedDamage(targetEnemy, damage, element, spellType, delay));
+
+                    targetEnemy.ApplyElement(element, spellType);
+                }
             }
-        }
 
 
-        if (element == ElementType.Bomb && spellType == SpellType.Single)
-        {
-            bombCounter++;
-            Debug.Log($"Bomb counter: {bombCounter}/3");
-        }
-        else if (spellType == SpellType.Ultimate)
-        {
-            bombCounter = 0; 
-        }
-
-
-        if (spellType == SpellType.Single)
-        {
-            // Single spells generate 1 AP
-            if (currentActionPoints < maxActionPoints)
+            if (element == ElementType.Bomb && spellType == SpellType.Single)
             {
-                currentActionPoints++;
-                UpdateActionPoints();
+                bombCounter++;
+                Debug.Log($"Bomb counter: {bombCounter}/3");
             }
-        }
-        else if (costsAP)
-        {
-            // Status/Skill spells consume 1 AP
-            UseActionPoint();
-        }
+            else if (spellType == SpellType.Ultimate)
+            {
+                bombCounter = 0; 
+            }
 
-        if (endsTurn || currentActionPoints == 0)
-        {
-            StartCoroutine(EndTurnAfterDelay(1.2f));
-        }
 
-        spellMenu.HideAll();
-    }
+            if (spellType == SpellType.Single)
+            {
+                if (currentActionPoints < maxActionPoints)
+                {
+                    currentActionPoints++;
+                    UpdateActionPoints();
+                }
+            }
+            else if (costsAP)
+            {
+                UseActionPoint();
+            }
+
+            if (endsTurn || currentActionPoints == 0)
+            {
+                StartCoroutine(EndTurnAfterDelay(1.2f));
+            }
+
+            spellMenu.HideAll();
+        }
 
     void RecordSpell(ElementType element, SpellType spellType)
     {
@@ -311,7 +343,8 @@ public class PlayerManager : MonoBehaviour
         {
             if (enemy.currentElement == ElementType.Electricity)
             {
-                FeedbackManager.Instance.ShowText("OVERLOAD!", enemy.transform.position, FeedbackManager.Instance.reactionColor);
+                Vector3 textPos = enemy.transform.position + (Vector3.up * 1.5f);
+                FeedbackManager.Instance.ShowText("OVERLOAD!", textPos, FeedbackManager.Instance.reactionColor);
                 Debug.Log("OVERLOAD! 6 DMG to all enemies.");
                 GameManager.Instance.LogReaction("Overload");
                 List<Enemy> allEnemies = new List<Enemy>(WaveManager.Instance.ActiveEnemies);
@@ -324,7 +357,9 @@ public class PlayerManager : MonoBehaviour
             }
             else if (enemy.currentElement == ElementType.Water)
             {
-                FeedbackManager.Instance.ShowText("VAPORIZE!", enemy.transform.position, FeedbackManager.Instance.reactionColor);
+                Vector3 textPos = enemy.transform.position + (Vector3.up * 1.5f);
+                
+                FeedbackManager.Instance.ShowText("VAPORIZE!", textPos, FeedbackManager.Instance.reactionColor);
                 Debug.Log("VAPORIZE! 9 DMG to target.");
                 enemy.TakeDamage(9);
                 GameManager.Instance.LogReaction("Vaporize");

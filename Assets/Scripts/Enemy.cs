@@ -90,10 +90,17 @@ public class Enemy : MonoBehaviour
     {
         transform.position = originalPosition + transform.right * 1f;
 
-        // Apply damage to player
         if (PlayerManager.Instance != null)
         {
+            Vector3 portaitPos = PlayerManager.Instance.magePortrait.position;
+
+            string damageText = $"<size=150%>-{attackDamage}</size>";
+            
+            FeedbackManager.Instance.ShowScreenText(damageText, portaitPos, Color.red);
+
             PlayerManager.Instance.TakeDamage(attackDamage);
+            
+            CameraShake.Instance.Shake(0.2f, 0.2f);
         }
     }
 
@@ -108,6 +115,13 @@ public class Enemy : MonoBehaviour
 
         health -= damage;
         UpdateHealthUI();
+
+        if (damage > 0)
+        {
+            string damageText = $"<size=150%>-{damage}</size>";
+            FeedbackManager.Instance.ShowText(damageText, transform.position, Color.red);  
+        }
+        
         Debug.Log($"{gameObject.name} took {damage} damage. HP: {health}");
 
         if (health <= 0) Die();
@@ -130,43 +144,48 @@ public class Enemy : MonoBehaviour
         StartCoroutine(HurtAnimationRoutine());
     }
 
-    public void PlayTargetedAttackEffect(ElementType element, SpellType spellType) 
-    { 
-        
+    public GameObject PlayTargetedAttackEffect(ElementType element, SpellType spellType) 
+        { 
 
-        if (element == ElementType.Electricity)
-        {
-            if (spellType == SpellType.Single && PlayerManager.Instance.zapPrefab != null)
+            Vector3 feetPos = transform.position + (Vector3.up * floorOffset);
+            Vector3 headPos = transform.position + (Vector3.up * headOffset);
+
+            Vector3 centerPos = (feetPos + headPos) / 2f;
+
+            GameObject spawnedVFX = null;
+
+            if (element == ElementType.Electricity)
             {
-                Vector3 magicCirclePos = transform.position + Vector3.down * 1f;
-                GameObject zap = Instantiate(PlayerManager.Instance.zapPrefab, magicCirclePos, Quaternion.identity);
-            }
-            else if (spellType == SpellType.Skill && PlayerManager.Instance.lightningPrefab != null)
-            {
-                Vector3 magicCirclePos = transform.position + Vector3.up * 4f;
-                GameObject lightning = Instantiate(PlayerManager.Instance.lightningPrefab, magicCirclePos, Quaternion.identity);
-                CameraShake.Instance.Shake(0.2f, 0.2f);
+                if (spellType == SpellType.Single && PlayerManager.Instance.zapPrefab != null)
+                {
+
+                    spawnedVFX = Instantiate(PlayerManager.Instance.zapPrefab, feetPos, Quaternion.identity);
+                }
+                else if (spellType == SpellType.Skill && PlayerManager.Instance.lightningPrefab != null)
+                {
+
+                    spawnedVFX = Instantiate(PlayerManager.Instance.lightningPrefab, headPos, Quaternion.identity);
+                    CameraShake.Instance.Shake(0.2f, 0.2f);
+                }
             }
             
-        }
-        if (element == ElementType.Water)
-        {
-            if (spellType == SpellType.Single && PlayerManager.Instance.waterBallPrefab != null)
+            if (element == ElementType.Water)
             {
-                Vector3 magicCirclePos = transform.position;
-                GameObject waterBall = Instantiate(PlayerManager.Instance.waterBallPrefab, magicCirclePos, Quaternion.identity);
+                if (spellType == SpellType.Single && PlayerManager.Instance.waterBallPrefab != null)
+                {
+                    spawnedVFX = Instantiate(PlayerManager.Instance.waterBallPrefab, centerPos, Quaternion.identity);
+                }
             }
-        }
 
-        if (element == ElementType.Bomb)
-        {
-            if (spellType == SpellType.Single && PlayerManager.Instance.bombPrefab != null)
+            if (element == ElementType.Bomb)
             {
-                Vector3 magicCirclePos = transform.position + Vector3.down * 0.8f;
-                GameObject bomb = Instantiate(PlayerManager.Instance.bombPrefab, magicCirclePos, Quaternion.identity);
+                if (spellType == SpellType.Single && PlayerManager.Instance.bombPrefab != null)
+                {
+                    spawnedVFX = Instantiate(PlayerManager.Instance.bombPrefab, feetPos, Quaternion.identity);
+                }
             }
+            return spawnedVFX;
         }
-    }
 
     void Die()
     {

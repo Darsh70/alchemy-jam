@@ -1,0 +1,773 @@
+fileFormatVersion: 2
+guid: 68beafd90c1b74fe1acef49811660ac0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8279222946174162946
+    second: vaporize-Sheet_0
+  - first:
+      213: -4452236302284734062
+    second: vaporize-Sheet_1
+  - first:
+      213: -8693706344391814217
+    second: vaporize-Sheet_2
+  - first:
+      213: -970221845970160812
+    second: vaporize-Sheet_3
+  - first:
+      213: -1637302859609740841
+    second: vaporize-Sheet_4
+  - first:
+      213: 5112450956303186713
+    second: vaporize-Sheet_5
+  - first:
+      213: -1224123017969532972
+    second: vaporize-Sheet_6
+  - first:
+      213: -4447038283821642780
+    second: vaporize-Sheet_7
+  - first:
+      213: 6706908960738833793
+    second: vaporize-Sheet_8
+  - first:
+      213: -2376439706889040598
+    second: vaporize-Sheet_9
+  - first:
+      213: -3391555139795831620
+    second: vaporize-Sheet_10
+  - first:
+      213: 186559721938470438
+    second: vaporize-Sheet_11
+  - first:
+      213: -2194362401053675717
+    second: vaporize-Sheet_12
+  - first:
+      213: -4769739286226599021
+    second: vaporize-Sheet_13
+  - first:
+      213: 4277342864851334835
+    second: vaporize-Sheet_14
+  - first:
+      213: -8148911551076686856
+    second: vaporize-Sheet_15
+  - first:
+      213: 9141773768656040900
+    second: vaporize-Sheet_16
+  - first:
+      213: -7272591704433984815
+    second: vaporize-Sheet_17
+  - first:
+      213: -95716021008352946
+    second: vaporize-Sheet_18
+  - first:
+      213: -1343240075827904619
+    second: vaporize-Sheet_19
+  - first:
+      213: -8733560561029981322
+    second: vaporize-Sheet_20
+  - first:
+      213: -1818607382304561355
+    second: vaporize-Sheet_21
+  - first:
+      213: 5700970958006361887
+    second: vaporize-Sheet_22
+  - first:
+      213: -3046937237454753493
+    second: vaporize-Sheet_23
+  - first:
+      213: -6569395738215807587
+    second: vaporize-Sheet_24
+  - first:
+      213: -7939933177525804588
+    second: vaporize-Sheet_25
+  - first:
+      213: 1677214830136683285
+    second: vaporize-Sheet_26
+  - first:
+      213: 254713040698452142
+    second: vaporize-Sheet_27
+  - first:
+      213: 7823250634138561989
+    second: vaporize-Sheet_28
+  - first:
+      213: -1931655208922913463
+    second: vaporize-Sheet_29
+  - first:
+      213: 6986144051350749475
+    second: vaporize-Sheet_30
+  - first:
+      213: -8610290832127524403
+    second: vaporize-Sheet_31
+  - first:
+      213: 4158019072841720831
+    second: vaporize-Sheet_32
+  - first:
+      213: 1441358602218687776
+    second: vaporize-Sheet_33
+  - first:
+      213: 1259399446715855904
+    second: vaporize-Sheet_34
+  - first:
+      213: 2851891556554756726
+    second: vaporize-Sheet_35
+  - first:
+      213: 2019681559235876287
+    second: vaporize-Sheet_36
+  - first:
+      213: 1984599979800007389
+    second: vaporize-Sheet_37
+  - first:
+      213: -2862575358258637150
+    second: vaporize-Sheet_38
+  - first:
+      213: -8510658320741446845
+    second: vaporize-Sheet_39
+  - first:
+      213: 911103831481933379
+    second: vaporize-Sheet_40
+  - first:
+      213: -5454345682176104425
+    second: vaporize-Sheet_41
+  - first:
+      213: -7424464221046306274
+    second: vaporize-Sheet_42
+  - first:
+      213: -1651634620205963932
+    second: vaporize-Sheet_43
+  - first:
+      213: 4479071111765007913
+    second: vaporize-Sheet_44
+  - first:
+      213: 818478543671017376
+    second: vaporize-Sheet_45
+  - first:
+      213: -1602009605946763849
+    second: vaporize-Sheet_46
+  - first:
+      213: -7983036278172873979
+    second: vaporize-Sheet_47
+  - first:
+      213: 7592352160231559595
+    second: vaporize-Sheet_48
+  - first:
+      213: -3313196891543562876
+    second: vaporize-Sheet_49
+  - first:
+      213: -844095178648580465
+    second: vaporize-Sheet_50
+  - first:
+      213: 2578964891803978497
+    second: vaporize-Sheet_51
+  - first:
+      213: -1861426733179761461
+    second: vaporize-Sheet_52
+  - first:
+      213: -6932600425837819274
+    second: vaporize-Sheet_53
+  - first:
+      213: 4818595939494116050
+    second: vaporize-Sheet_54
+  - first:
+      213: -691962291035047254
+    second: vaporize-Sheet_55
+  - first:
+      213: 616889043261774969
+    second: vaporize-Sheet_56
+  - first:
+      213: 6714751315092255877
+    second: vaporize-Sheet_57
+  - first:
+      213: 5130585480207547715
+    second: vaporize-Sheet_58
+  - first:
+      213: -4088790132579342146
+    second: vaporize-Sheet_59
+  - first:
+      213: 3608031831634660968
+    second: vaporize-Sheet_60
+  - first:
+      213: -1594372206151911891
+    second: vaporize-Sheet_61
+  - first:
+      213: -5001742804504512824
+    second: vaporize-Sheet_62
+  - first:
+      213: 985868116352181397
+    second: vaporize-Sheet_63
+  - first:
+      213: 346095964295806370
+    second: vaporize-Sheet_64
+  - first:
+      213: -2727572605263879387
+    second: vaporize-Sheet_65
+  - first:
+      213: -339863838426410290
+    second: vaporize-Sheet_66
+  - first:
+      213: -9048941797674257008
+    second: vaporize-Sheet_67
+  - first:
+      213: 2137789808154438413
+    second: vaporize-Sheet_68
+  - first:
+      213: 9024661863190380820
+    second: vaporize-Sheet_69
+  - first:
+      213: 5201718424156790474
+    second: vaporize-Sheet_70
+  - first:
+      213: -6269420681651866679
+    second: vaporize-Sheet_71
+  - first:
+      213: 7533137236784523552
+    second: vaporize-Sheet_72
+  - first:
+      213: 7923121627850275955
+    second: vaporize-Sheet_73
+  - first:
+      213: -5256677107489161295
+    second: vaporize-Sheet_74
+  - first:
+      213: -547678887334116362
+    second: vaporize-Sheet_75
+  - first:
+      213: -7124036509383122529
+    second: vaporize-Sheet_76
+  - first:
+      213: 6097346634029126255
+    second: vaporize-Sheet_77
+  - first:
+      213: -321060825344754119
+    second: vaporize-Sheet_78
+  - first:
+      213: -383539052512377515
+    second: vaporize-Sheet_79
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: vaporize-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20859f28765b5e270800000000000000
+      internalID: 8279222946174162946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vaporize-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 291483a0caa7632c0800000000000000
+      internalID: -4452236302284734062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vaporize-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b357f81420c95780800000000000000
+      internalID: -8693706344391814217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vaporize-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 453ff9d1f541982f0800000000000000
+      internalID: -970221845970160812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vaporize-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d9ea3759b12749e0800000000000000
+      internalID: -1637302859609740841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vaporize-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91bbe0ece0313f640800000000000000
+      internalID: 5112450956303186713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vaporize-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dffb80d99a030fe0800000000000000
+      internalID: -1224123017969532972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vaporize-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4eb8f360e32f842c0800000000000000
+      internalID: -4447038283821642780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vaporize-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 185f8b14a2ab31d50800000000000000
+      internalID: 6706908960738833793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vaporize-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2dceb07da0350fd0800000000000000
+      internalID: -2376439706889040598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vaporize-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb4b150d196cee0d0800000000000000
+      internalID: -3391555139795831620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vaporize-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 626c983241bc69200800000000000000
+      internalID: 186559721938470438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vaporize-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3fe8b0c50f0c81e0800000000000000
+      internalID: -2194362401053675717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vaporize-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3930d3de36b7ecdb0800000000000000
+      internalID: -4769739286226599021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vaporize-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b6f30a5cac2c5b30800000000000000
+      internalID: 4277342864851334835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vaporize-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f32ffb7e1049ee80800000000000000
+      internalID: -8148911551076686856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vaporize-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c33ab1beca1ede70800000000000000
+      internalID: 9141773768656040900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vaporize-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1da72cc6060921b90800000000000000
+      internalID: -7272591704433984815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: ea5b66dc3c6be4d1ab72c9fd75af9e76
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":18.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      vaporize-Sheet_0: 8279222946174162946
+      vaporize-Sheet_1: -4452236302284734062
+      vaporize-Sheet_10: -3391555139795831620
+      vaporize-Sheet_11: 186559721938470438
+      vaporize-Sheet_12: -2194362401053675717
+      vaporize-Sheet_13: -4769739286226599021
+      vaporize-Sheet_14: 4277342864851334835
+      vaporize-Sheet_15: -8148911551076686856
+      vaporize-Sheet_16: 9141773768656040900
+      vaporize-Sheet_17: -7272591704433984815
+      vaporize-Sheet_2: -8693706344391814217
+      vaporize-Sheet_3: -970221845970160812
+      vaporize-Sheet_4: -1637302859609740841
+      vaporize-Sheet_5: 5112450956303186713
+      vaporize-Sheet_6: -1224123017969532972
+      vaporize-Sheet_7: -4447038283821642780
+      vaporize-Sheet_8: 6706908960738833793
+      vaporize-Sheet_9: -2376439706889040598
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

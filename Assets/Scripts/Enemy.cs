@@ -13,6 +13,11 @@ public class Enemy : MonoBehaviour
 
     [Header("UI")]
     public Image healthBarFill;
+    public Image healthBarGhost; 
+
+    private Coroutine healthRoutine;
+    private float ghostDelay = 0.5f;
+    private float ghostSpeed = 2f;
 
     protected Animator animator;
     private Vector3 originalPosition;
@@ -34,7 +39,8 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         health = maxHealth;
-        UpdateHealthUI();
+        if (healthBarFill != null) healthBarFill.fillAmount = 1f;
+        if (healthBarGhost != null) healthBarGhost.fillAmount = 1f;
         originalPosition = transform.position;
     }
 
@@ -52,8 +58,69 @@ public class Enemy : MonoBehaviour
 
     void UpdateHealthUI()
     {
-        if (healthBarFill != null)
-            healthBarFill.fillAmount = (float)health / maxHealth;
+        if (healthBarFill == null) return;
+
+        float targetFill = (float)health / maxHealth;
+
+
+        if (healthBarGhost == null)
+        {
+            healthBarFill.fillAmount = targetFill;
+            return;
+        }
+
+        float currentFill = healthBarFill.fillAmount;
+
+        if (Mathf.Abs(targetFill - currentFill) < 0.001f) return; 
+
+
+        if (healthRoutine != null) StopCoroutine(healthRoutine);
+
+        // DAMAGE
+        if (targetFill < currentFill)
+        {
+            healthBarGhost.color = new Color(1f, 0.33f, 0f); 
+            healthBarGhost.fillAmount = currentFill;
+            healthBarFill.fillAmount = targetFill;
+            healthRoutine = StartCoroutine(AnimateGhostBar(targetFill));
+        }
+        // HEALING
+        else if (targetFill > currentFill)
+        {
+            healthBarGhost.color = new Color(0f, 0.84f, 0.41f);
+            healthBarGhost.fillAmount = targetFill;
+            healthRoutine = StartCoroutine(AnimateHealBar(targetFill));
+        }
+    }
+
+    IEnumerator AnimateGhostBar(float targetFill)
+    {
+
+        yield return new WaitForSeconds(ghostDelay);
+        float t = 0f;
+        float startFill = healthBarGhost.fillAmount;
+        while (t < 1f)
+        {
+            t += Time.deltaTime * ghostSpeed;
+            healthBarGhost.fillAmount = Mathf.Lerp(startFill, targetFill, t);
+            yield return null;
+        }
+        healthBarGhost.fillAmount = targetFill;
+    }
+
+    IEnumerator AnimateHealBar(float targetFill)
+    {
+        yield return new WaitForSeconds(ghostDelay);
+        float t = 0f;
+        float startFill = healthBarFill.fillAmount;
+        while (t < 1f)
+        {
+            t += Time.deltaTime * ghostSpeed;
+            healthBarFill.fillAmount = Mathf.Lerp(startFill, targetFill, t);
+            yield return null;
+        }
+        healthBarFill.fillAmount = targetFill;
+        healthBarGhost.fillAmount = targetFill;
     }
 
     public void ApplyElement(ElementType element, SpellType spellType)

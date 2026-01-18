@@ -45,7 +45,6 @@ public class PlayerManager : MonoBehaviour
     public GameObject bombPrefab;
 
     [Header("UI VFX")]
-    public Image healGlowImage;
     public RectTransform magePortrait; 
 
 
@@ -255,16 +254,32 @@ public class PlayerManager : MonoBehaviour
                     {
                         TriggerExplosion triggerScript = spellObject.GetComponent<TriggerExplosion>();
                         
-                        // FIX: Check 'storedReactionElement' instead of 'targetEnemy.currentElement'
-                        if (triggerScript != null && storedReactionElement != null)
+                        if (triggerScript != null && targetEnemy != null)
                         {
-                            if (storedReactionElement == ElementType.Water)
+
+                            Vector3 feetPos = targetEnemy.transform.position + (Vector3.up * targetEnemy.floorOffset);
+                            Vector3 headPos = targetEnemy.transform.position + (Vector3.up * targetEnemy.headOffset);
+                            Vector3 centerPos = (feetPos + headPos) / 2f;
+
+
+                            Vector3 offset = centerPos - spellObject.transform.position;
+
+
+                            triggerScript.SetExplosionOffset(offset);
+                          
+
+                            if (storedReactionElement != null)
                             {
-                                triggerScript.SetReactionType(ReactionEffectType.Vaporize);
-                            }
-                            else if (storedReactionElement == ElementType.Electricity)
-                            {
-                                triggerScript.SetReactionType(ReactionEffectType.Overload);
+                                if (storedReactionElement == ElementType.Water)
+                                {
+
+                                    triggerScript.SetupVaporize(targetEnemy, 9);
+                                }
+                                else if (storedReactionElement == ElementType.Electricity)
+                                {
+
+                                    triggerScript.SetupOverload(6);
+                                }
                             }
                         }
                     }
@@ -343,42 +358,32 @@ public class PlayerManager : MonoBehaviour
         {
             if (enemy.currentElement == ElementType.Electricity)
             {
-                Vector3 textPos = enemy.transform.position + (Vector3.up * 1.5f);
-                FeedbackManager.Instance.ShowText("OVERLOAD!", textPos, FeedbackManager.Instance.reactionColor);
-                Debug.Log("OVERLOAD! 6 DMG to all enemies.");
+                Debug.Log("OVERLOAD Configured.");
                 GameManager.Instance.LogReaction("Overload");
-                List<Enemy> allEnemies = new List<Enemy>(WaveManager.Instance.ActiveEnemies);
-                foreach (Enemy e in allEnemies)
-                {
-                    if (e != null) e.TakeDamage(6);
-                }
-                CameraShake.Instance.Shake(0.3f, 0.3f);
                 reactionTriggered = true; 
             }
             else if (enemy.currentElement == ElementType.Water)
             {
-                Vector3 textPos = enemy.transform.position + (Vector3.up * 1.5f);
-                
-                FeedbackManager.Instance.ShowText("VAPORIZE!", textPos, FeedbackManager.Instance.reactionColor);
-                Debug.Log("VAPORIZE! 9 DMG to target.");
-                enemy.TakeDamage(9);
+
+                Debug.Log("VAPORIZE Configured.");
                 GameManager.Instance.LogReaction("Vaporize");
-                CameraShake.Instance.Shake(0.2f, 0.4f);
                 reactionTriggered = true; 
             }
 
             if (reactionTriggered)
             {
-                // Consume status aura
+
                 if (enemy.currentStatusCircle != null)
                 {
                     Destroy(enemy.currentStatusCircle);
                     enemy.currentStatusCircle = null;
                 }
+                // Consume the element
                 enemy.currentElement = null;
                 return true; 
             }
         }
+
 
         // COMBOS 
         if (spellHistory.Count < 2) return false;
@@ -472,46 +477,23 @@ public class PlayerManager : MonoBehaviour
 
     void Heal(int amount)
     {
+        int oldHealth = currentHealth;
         currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
+        int actualHealed = currentHealth - oldHealth;
+
         UpdateHealthUI();
 
-        if (healGlowImage != null)
+
+        if (actualHealed > 0)
         {
-            StopCoroutine("HealGlowRoutine"); 
-            StartCoroutine(HealGlowRoutine());
+            if (magePortrait != null)
+            {
+                string healText = $"<size=150%>+{actualHealed}</size>";
+                FeedbackManager.Instance.ShowScreenText(healText, magePortrait.position, Color.green);
+            }
         }
 
     }
-
-    IEnumerator HealGlowRoutine()
-    {
-        float duration = 1f;
-        float elapsed = 0f;
-        Color color = healGlowImage.color;
-
-        // Fade In
-        while (elapsed < duration * 0.3f)
-        {
-            elapsed += Time.deltaTime;
-            color.a = Mathf.Lerp(0, 0.7f, elapsed / (duration * 0.3f));
-            healGlowImage.color = color;
-            yield return null;
-        }
-
-        // Fade Out
-        elapsed = 0f;
-        while (elapsed < duration * 0.7f)
-        {
-            elapsed += Time.deltaTime;
-            color.a = Mathf.Lerp(0.7f, 0, elapsed / (duration * 0.7f));
-            healGlowImage.color = color;
-            yield return null;
-        }
-
-        color.a = 0;
-        healGlowImage.color = color;
-    }
-
 
     void ApplyHoT(int amount, int turns)
     {
@@ -543,7 +525,76 @@ public class PlayerManager : MonoBehaviour
         UpdateActionPoints();
     }
 
-    void UpdateHealthUI() => healthBarFill.fillAmount = (float)currentHealth / maxHealth;
+    void UpdateHealthUI() 
+    {
+        if (healthBarFill == null || healthBarGhost == null) return;
+
+        float targetFill = (float)currentHealth / maxHealth;
+        float currentFill = healthBarFill.fillAmount;
+
+        // Stop any running animation so we don't glitch out on rapid hits
+        if (healthRoutine != null) StopCoroutine(healthRoutine);
+
+
+        if (targetFill < currentFill)
+        {
+
+            healthBarGhost.color = new Color(1f, 0.33f, 0f); 
+            healthBarGhost.fillAmount = currentFill;
+
+            healthBarFill.fillAmount = targetFill;
+
+
+            healthRoutine = StartCoroutine(AnimateGhostBar(targetFill));
+        }
+
+        else if (targetFill > currentFill)
+        {
+
+            healthBarGhost.color = new Color(0f, 0.84f, 0.41f); 
+            healthBarGhost.fillAmount = targetFill;
+
+ 
+            healthRoutine = StartCoroutine(AnimateHealBar(targetFill));
+        }
+    }
+
+
+    IEnumerator AnimateGhostBar(float targetFill)
+    {
+        yield return new WaitForSeconds(ghostDelay);
+
+        float t = 0f;
+        float startFill = healthBarGhost.fillAmount;
+
+        while (t < 1f)
+        {
+            t += Time.deltaTime * ghostSpeed;
+            healthBarGhost.fillAmount = Mathf.Lerp(startFill, targetFill, t);
+            yield return null;
+        }
+        healthBarGhost.fillAmount = targetFill;
+    }
+
+
+    IEnumerator AnimateHealBar(float targetFill)
+    {
+        yield return new WaitForSeconds(ghostDelay);
+
+        float t = 0f;
+        float startFill = healthBarFill.fillAmount;
+
+        while (t < 1f)
+        {
+            t += Time.deltaTime * ghostSpeed;
+            healthBarFill.fillAmount = Mathf.Lerp(startFill, targetFill, t);
+            yield return null;
+        }
+        healthBarFill.fillAmount = targetFill;
+        
+
+        healthBarGhost.fillAmount = targetFill;
+    }
 
     void UpdateActionPoints()
     {

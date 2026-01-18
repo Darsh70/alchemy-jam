@@ -128,5 +128,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TriggerExplosion
   normalExplosion: {fileID: 4940887592536772327, guid: 24f26f2a12c60402a931b4cc511789e0, type: 3}
-  vaporizeExplosion: {fileID: 6250594344943468364, guid: 5fa1667631c494fa99cb10e12cd759d5, type: 3}
-  overloadExplosion: {fileID: 7127307240291757280, guid: e237a1a00f6f74d568eeef2295cb5f27, type: 3}
+  vaporizeExplosion: {fileID: 5677947210946988474, guid: 5fa1667631c494fa99cb10e12cd759d5, type: 3}
+  overloadExplosion: {fileID: 6795400880537170261, guid: 9b6ac99b51d324130946b0bca8a77436, type: 3}

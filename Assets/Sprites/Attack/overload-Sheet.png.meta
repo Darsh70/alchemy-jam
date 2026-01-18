@@ -1,0 +1,532 @@
+fileFormatVersion: 2
+guid: f25ad5bf60c4b45c4a4d74dcca015f7b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -351411513298229098
+    second: overload-Sheet_0
+  - first:
+      213: 7823742200378755399
+    second: overload-Sheet_1
+  - first:
+      213: 1131609949874028869
+    second: overload-Sheet_2
+  - first:
+      213: 5653329290639492133
+    second: overload-Sheet_3
+  - first:
+      213: -335535345867625442
+    second: overload-Sheet_4
+  - first:
+      213: -7332183541879808387
+    second: overload-Sheet_5
+  - first:
+      213: 7051093692177820297
+    second: overload-Sheet_6
+  - first:
+      213: 1385583084227157972
+    second: overload-Sheet_7
+  - first:
+      213: 4349468692201182997
+    second: overload-Sheet_8
+  - first:
+      213: -8363628814498702826
+    second: overload-Sheet_9
+  - first:
+      213: 8640984220757075185
+    second: overload-Sheet_10
+  - first:
+      213: -5848266239954677176
+    second: overload-Sheet_11
+  - first:
+      213: 3398692762571188313
+    second: overload-Sheet_12
+  - first:
+      213: -4261406906408914147
+    second: overload-Sheet_13
+  - first:
+      213: 9105607279276353678
+    second: overload-Sheet_14
+  - first:
+      213: -1109996980748535250
+    second: overload-Sheet_15
+  - first:
+      213: 3244122984770578852
+    second: overload-Sheet_16
+  - first:
+      213: -2522540556708117222
+    second: overload-Sheet_17
+  - first:
+      213: 6903099560210548682
+    second: overload-Sheet_18
+  - first:
+      213: -2529156491045509752
+    second: overload-Sheet_19
+  - first:
+      213: 4697180905657071636
+    second: overload-Sheet_20
+  - first:
+      213: 3966796841065553988
+    second: overload-Sheet_21
+  - first:
+      213: 3313949363198001612
+    second: overload-Sheet_22
+  - first:
+      213: 8284725278589040446
+    second: overload-Sheet_23
+  - first:
+      213: -8004470018223213987
+    second: overload-Sheet_24
+  - first:
+      213: 3448612486733262154
+    second: overload-Sheet_25
+  - first:
+      213: -5755809372465560827
+    second: overload-Sheet_26
+  - first:
+      213: 2809992588202762967
+    second: overload-Sheet_27
+  - first:
+      213: 4742696492742933152
+    second: overload-Sheet_28
+  - first:
+      213: -8469673145146292958
+    second: overload-Sheet_29
+  - first:
+      213: 4693712975522802412
+    second: overload-Sheet_30
+  - first:
+      213: -2112970075977416227
+    second: overload-Sheet_31
+  - first:
+      213: 7034053749867205831
+    second: overload-Sheet_32
+  - first:
+      213: 7442504182816003403
+    second: overload-Sheet_33
+  - first:
+      213: -5393483820910364137
+    second: overload-Sheet_34
+  - first:
+      213: -6969712833174401948
+    second: overload-Sheet_35
+  - first:
+      213: 5756153311144489834
+    second: overload-Sheet_36
+  - first:
+      213: -6349420638102587587
+    second: overload-Sheet_37
+  - first:
+      213: -8588455316635537958
+    second: overload-Sheet_38
+  - first:
+      213: -5318696580262774448
+    second: overload-Sheet_39
+  - first:
+      213: -6909588401393545241
+    second: overload-Sheet_40
+  - first:
+      213: 5417561085890812212
+    second: overload-Sheet_41
+  - first:
+      213: 7206295404427604287
+    second: overload-Sheet_42
+  - first:
+      213: 1779384354335462237
+    second: overload-Sheet_43
+  - first:
+      213: -6622035647754137712
+    second: overload-Sheet_44
+  - first:
+      213: -3075571907744035920
+    second: overload-Sheet_45
+  - first:
+      213: 2701478429445796304
+    second: overload-Sheet_46
+  - first:
+      213: 2789668035965985002
+    second: overload-Sheet_47
+  - first:
+      213: -3003236131973538921
+    second: overload-Sheet_48
+  - first:
+      213: -1302128654016506729
+    second: overload-Sheet_49
+  - first:
+      213: 535843368884082058
+    second: overload-Sheet_50
+  - first:
+      213: 829212646384509726
+    second: overload-Sheet_51
+  - first:
+      213: -4462749082110050840
+    second: overload-Sheet_52
+  - first:
+      213: -1431928063153524610
+    second: overload-Sheet_53
+  - first:
+      213: 5207838871302832090
+    second: overload-Sheet_54
+  - first:
+      213: 6464539907676058998
+    second: overload-Sheet_55
+  - first:
+      213: -3849381830236740788
+    second: overload-Sheet_56
+  - first:
+      213: 6121946055022570336
+    second: overload-Sheet_57
+  - first:
+      213: -907037614152030763
+    second: overload-Sheet_58
+  - first:
+      213: 2924286615341760286
+    second: overload-Sheet_59
+  - first:
+      213: -684762852733902842
+    second: overload-Sheet_60
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: overload-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69860eb27198f1bf0800000000000000
+      internalID: -351411513298229098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: overload-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7490fcb4414839c60800000000000000
+      internalID: 7823742200378755399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: overload-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5410a8ef04944bf00800000000000000
+      internalID: 1131609949874028869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: overload-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 524c0e68909a47e40800000000000000
+      internalID: 5653329290639492133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: overload-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1ce8f37160f75bf0800000000000000
+      internalID: -335535345867625442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: overload-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7ed94e8ae9de3a90800000000000000
+      internalID: -7332183541879808387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: overload-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98aa140da548ad160800000000000000
+      internalID: 7051093692177820297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: overload-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4df562659749a3310800000000000000
+      internalID: 1385583084227157972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: overload-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51795582bba6c5c30800000000000000
+      internalID: 4349468692201182997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: overload-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61a5596d7eb6eeb80800000000000000
+      internalID: -8363628814498702826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 55269ef4634f14ad893c9c4b4983efd7
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":10.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      overload-Sheet_0: -351411513298229098
+      overload-Sheet_1: 7823742200378755399
+      overload-Sheet_2: 1131609949874028869
+      overload-Sheet_3: 5653329290639492133
+      overload-Sheet_4: -335535345867625442
+      overload-Sheet_5: -7332183541879808387
+      overload-Sheet_6: 7051093692177820297
+      overload-Sheet_7: 1385583084227157972
+      overload-Sheet_8: 4349468692201182997
+      overload-Sheet_9: -8363628814498702826
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

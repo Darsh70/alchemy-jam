@@ -98,7 +98,7 @@ public class TurnManager : MonoBehaviour
             // Small pause between different enemies acting
             yield return new WaitForSeconds(0.4f);
         }
-
+        yield return new WaitForSeconds(0.4f);
         StartPlayerTurn();
     }
 

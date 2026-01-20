@@ -1,17 +1,35 @@
 using UnityEngine;
-using System.Collections.Generic;
 using System.Collections; 
+using System.Collections.Generic;
+
+
+[System.Serializable]
+public class WaveProfile
+{
+    public string waveName;
+    public List<GameObject> enemiesInWave; 
+}
 
 public class WaveManager : MonoBehaviour
 {
     public static WaveManager Instance;
     public List<Enemy> ActiveEnemies = new();
 
-    [Header("Wave Settings")]
+    [Header("Wave Configuration")]
     public int currentWave = 1;
+    public List<WaveProfile> allWaves; 
+    
+    [Header("Spawn Settings")]
     public Transform enemyParent;
-    public List<GameObject> enemyPrefabs;
-    public float waveDelay = 2.0f; 
+    public float waveDelay = 2.0f;
+    
+
+    public float centerOffset = 0f; 
+    
+    public float spacingX = 4.0f; 
+    
+    public float spawnY = 0f;
+
 
     private void Awake()
     {
@@ -26,90 +44,69 @@ public class WaveManager : MonoBehaviour
     public void SpawnWave()
     {
         ActiveEnemies.Clear();
-        int enemyCount = 1;
 
-        // Determine number of enemies
-        if (currentWave <= 2)
-            enemyCount = Random.Range(1, 3); // 1 or 2
-        else if (currentWave <= 5)
-            enemyCount = Random.Range(1, 4); // 1–3
-        else
-            enemyCount = Random.Range(1, 3); // 1–2 for boss waves
+        if (currentWave > allWaves.Count)
+        {
+            Debug.Log("ALL WAVES CLEARED! VICTORY!");
+            // GameManager.Instance.TriggerVictory(); 
+            return;
+        }
 
-        int bossesSpawned = 0;
+        WaveProfile profile = allWaves[currentWave - 1];
+        Debug.Log($"Starting Wave {currentWave}: {profile.waveName}");
+
+
+        int enemyCount = profile.enemiesInWave.Count;
+        
+        // Calculate how wide the whole group is
+        // (If 1 enemy, width is 0. If 3 enemies, width is 2 * spacing)
+        float totalWidth = (enemyCount - 1) * spacingX;
+
+        // Find the far-left start point so the group is centered
+        float startX = centerOffset - (totalWidth / 2f);
 
         for (int i = 0; i < enemyCount; i++)
         {
-            GameObject prefab = ChooseEnemyForWave(ref bossesSpawned);
-            GameObject enemyGO = Instantiate(prefab, enemyParent);
-            enemyGO.transform.position = new Vector3(i * 5f, 0, 0);
+            GameObject prefab = profile.enemiesInWave[i];
+            
+            if (prefab != null)
+            {
+                GameObject enemyGO = Instantiate(prefab, enemyParent);
+                
+                // Place current enemy based on StartX
+                float xPos = startX + (i * spacingX);
+                
+                enemyGO.transform.position = new Vector3(xPos, spawnY, 0);
 
-            Enemy enemy = enemyGO.GetComponent<Enemy>();
-            ActiveEnemies.Add(enemy);
-
-            Debug.Log($"Wave {currentWave}: Spawned {enemy.enemyType}");
+                Enemy enemy = enemyGO.GetComponent<Enemy>();
+                ActiveEnemies.Add(enemy);
+            }
         }
     }
-
-    GameObject ChooseEnemyForWave(ref int bossesSpawned)
-    {
-        List<GameObject> possibleEnemies = new()
-        {
-            enemyPrefabs[3]
-            // enemyPrefabs[3],
-            // enemyPrefabs[0], 
-            // enemyPrefabs[1], 
-            // enemyPrefabs[2]  
-        };
-
-
-        if (currentWave == 6)
-            possibleEnemies = new List<GameObject> { enemyPrefabs[4] };
-
-
-        if (currentWave > 6)
-        {
-            if (bossesSpawned < 1)
-                possibleEnemies.Add(enemyPrefabs[4]); 
-        }
-
-
-        if (currentWave > 4 && !possibleEnemies.Contains(enemyPrefabs[3]))
-            possibleEnemies.Add(enemyPrefabs[3]);
-
-        GameObject chosen = possibleEnemies[Random.Range(0, possibleEnemies.Count)];
-
-
-        if (chosen == enemyPrefabs[4])
-            bossesSpawned++;
-
-        return chosen;
-    }
-
     public void OnEnemyKill(Enemy enemy)
     {
         ActiveEnemies.Remove(enemy);
 
         if (ActiveEnemies.Count == 0)
         {
-             StartCoroutine(PrepareNextWave());
+            StartCoroutine(PrepareNextWave());
         }
     }
+
     IEnumerator PrepareNextWave()
     {
-        Debug.Log("Wave cleared! Waiting for next wave...");
-        
-        // Wait for 2 seconds (allows death animations to finish)
-        yield return new WaitForSeconds(waveDelay);
-
         if (GameManager.Instance != null)
             GameManager.Instance.AddWaveCleared();
 
+        yield return new WaitForSeconds(waveDelay);
+
         currentWave++;
-        Debug.Log($"Wave {currentWave} starting...");
-        
         SpawnWave();
         
-        TurnManager.Instance.StartPlayerTurn();
+        // Only start turn if we actually spawned something 
+        if (currentWave <= allWaves.Count + 1)
+        {
+            TurnManager.Instance.StartPlayerTurn();
+        }
     }
 }

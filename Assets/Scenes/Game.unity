@@ -4421,14 +4421,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WaveManager
   ActiveEnemies: []
   currentWave: 1
+  allWaves:
+  - waveName: 1
+    enemiesInWave:
+    - {fileID: 8995748881601380219, guid: 6a8b858c3e714476fa5ac5dd6433511b, type: 3}
+    - {fileID: 8995748881601380219, guid: e94ad2768e2cf47b5b710347f29a47af, type: 3}
+  - waveName: 2
+    enemiesInWave:
+    - {fileID: 8995748881601380219, guid: c77d2308e7b104ad8803f39874956c60, type: 3}
+    - {fileID: 8995748881601380219, guid: dc2cbb63ada0a4ff7b522f010feea3f1, type: 3}
+  - waveName: 3
+    enemiesInWave:
+    - {fileID: 8995748881601380219, guid: 20bee7f98ddcd4336bbe9ea01d9acb8c, type: 3}
+    - {fileID: 8995748881601380219, guid: dc2cbb63ada0a4ff7b522f010feea3f1, type: 3}
+  - waveName: 4
+    enemiesInWave:
+    - {fileID: 8995748881601380219, guid: e94ad2768e2cf47b5b710347f29a47af, type: 3}
+  - waveName: 5
+    enemiesInWave:
+    - {fileID: 8995748881601380219, guid: c77d2308e7b104ad8803f39874956c60, type: 3}
+    - {fileID: 8995748881601380219, guid: c77d2308e7b104ad8803f39874956c60, type: 3}
+    - {fileID: 8995748881601380219, guid: 20bee7f98ddcd4336bbe9ea01d9acb8c, type: 3}
+  - waveName: 6
+    enemiesInWave:
+    - {fileID: 8995748881601380219, guid: e94ad2768e2cf47b5b710347f29a47af, type: 3}
+    - {fileID: 8995748881601380219, guid: e94ad2768e2cf47b5b710347f29a47af, type: 3}
+  - waveName: 7
+    enemiesInWave:
+    - {fileID: 8995748881601380219, guid: c77d2308e7b104ad8803f39874956c60, type: 3}
+    - {fileID: 8995748881601380219, guid: dc2cbb63ada0a4ff7b522f010feea3f1, type: 3}
+    - {fileID: 8995748881601380219, guid: 20bee7f98ddcd4336bbe9ea01d9acb8c, type: 3}
+  - waveName: 8
+    enemiesInWave:
+    - {fileID: 8995748881601380219, guid: e94ad2768e2cf47b5b710347f29a47af, type: 3}
+    - {fileID: 8995748881601380219, guid: 6a8b858c3e714476fa5ac5dd6433511b, type: 3}
+    - {fileID: 8995748881601380219, guid: c77d2308e7b104ad8803f39874956c60, type: 3}
   enemyParent: {fileID: 1838587084}
-  enemyPrefabs:
-  - {fileID: 8995748881601380219, guid: dc2cbb63ada0a4ff7b522f010feea3f1, type: 3}
-  - {fileID: 8995748881601380219, guid: c77d2308e7b104ad8803f39874956c60, type: 3}
-  - {fileID: 8995748881601380219, guid: 20bee7f98ddcd4336bbe9ea01d9acb8c, type: 3}
-  - {fileID: 8995748881601380219, guid: e94ad2768e2cf47b5b710347f29a47af, type: 3}
-  - {fileID: 8995748881601380219, guid: 6a8b858c3e714476fa5ac5dd6433511b, type: 3}
   waveDelay: 2
+  centerOffset: 0
+  spacingX: 3.5
+  spawnY: 0
 --- !u!4 &1458379653
 Transform:
   m_ObjectHideFlags: 0

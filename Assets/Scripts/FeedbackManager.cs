@@ -13,6 +13,14 @@ public class FeedbackManager : MonoBehaviour
     public Color healComboColor = new Color(0f, 1f, 0.5f); 
     public Color electricComboColor = new Color(1f, 1f, 0f); 
 
+    private bool useRightSide = true;
+
+    // NEW: Define your two fixed offsets here (X, Y, Z)
+    // Offset A: Slightly Right and Up
+    private Vector3 offsetRight = new Vector3(60f, 150f, 0f);
+    // Offset B: Slightly Left and Up
+    private Vector3 offsetLeft = new Vector3(-60f, 120f, 0f); 
+
     void Awake()
     {
         Instance = this;
@@ -32,7 +40,7 @@ public class FeedbackManager : MonoBehaviour
             {
                 Vector3 screenPosition = Camera.main.WorldToScreenPoint(worldPosition);
 
-                float randomX = Random.Range(-50f, 50f);
+                float randomX = Random.Range(-100f, 0f);
                 
 
                 float randomY = Random.Range(50f, 120f); 
@@ -57,12 +65,11 @@ public class FeedbackManager : MonoBehaviour
             GameObject go = Instantiate(floatingTextPrefab, gameCanvas.transform);
             go.transform.localScale = Vector3.one;
 
-            float randomY = Random.Range(100f, 200f);
-            float randomX = Random.Range(-30f, 30f); 
-            
-            Vector3 offset = new Vector3(randomX, randomY, 0); 
+            Vector3 selectedOffset = useRightSide ? offsetRight : offsetLeft;
 
-            go.transform.position = screenPosition + offset;
+            go.transform.position = screenPosition + selectedOffset;
+
+            useRightSide = !useRightSide;
 
             FloatingText ft = go.GetComponent<FloatingText>();
             if (ft != null)

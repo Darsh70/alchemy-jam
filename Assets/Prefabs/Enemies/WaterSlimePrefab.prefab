@@ -522,6 +522,8 @@ MonoBehaviour:
   currentStatusCircle: {fileID: 0}
   floorOffset: -0.5
   headOffset: 1.8
+  lightningYOffset: 2.5
+  bombYOffset: 0.3
 --- !u!114 &548675124978988287
 MonoBehaviour:
   m_ObjectHideFlags: 0

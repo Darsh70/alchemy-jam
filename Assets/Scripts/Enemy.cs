@@ -26,9 +26,14 @@ public class Enemy : MonoBehaviour
     [Header("Effect Positions")]
     public float floorOffset = -0.5f; 
     public float headOffset = 1.8f;  
+    public float lightningYOffset = 0f; 
+    public float bombYOffset = 0f;
 
     [Header("Status")]
     public ElementType? currentElement = null;
+
+    [Header("Status Flags")]
+    public bool isStunned = false;
 
     protected virtual void Awake()
     {
@@ -48,11 +53,11 @@ public class Enemy : MonoBehaviour
     {
         switch (enemyType)
         {
-            case EnemyType.FireSlime: maxHealth = 10; attackDamage = 3; break;
-            case EnemyType.WaterSlime: maxHealth = 12; attackDamage = 2; break;
-            case EnemyType.ElectricSlime: maxHealth = 10; attackDamage = 4; break;
-            case EnemyType.Skeleton: maxHealth = 20; attackDamage = 2; break;
-            case EnemyType.Boss: maxHealth = 50; attackDamage = 10; break;
+            case EnemyType.FireSlime: maxHealth = 10; attackDamage = 2; break;
+            case EnemyType.WaterSlime: maxHealth = 10; attackDamage = 1; break;
+            case EnemyType.ElectricSlime: maxHealth = 10; attackDamage = 3; break;
+            case EnemyType.Skeleton: maxHealth = 25; attackDamage = 3; break;
+            case EnemyType.Boss: maxHealth = 80; attackDamage = 4; break;
         }
     }
 
@@ -144,6 +149,17 @@ public class Enemy : MonoBehaviour
 
         if (health <= 0) yield break;
 
+        if (isStunned)
+        {
+            FeedbackManager.Instance.ShowText("STUNNED!", transform.position, Color.yellow);
+            
+            isStunned = false; 
+            
+            yield return new WaitForSeconds(0.8f); 
+            
+            yield break; 
+        }
+
         animator.SetTrigger("Attack");
 
         // Length of the attack animation before resetting position
@@ -230,8 +246,9 @@ public class Enemy : MonoBehaviour
                 }
                 else if (spellType == SpellType.Skill && PlayerManager.Instance.lightningPrefab != null)
                 {
+                    Vector3 lightningPos = headPos + (Vector3.up * lightningYOffset);
 
-                    spawnedVFX = Instantiate(PlayerManager.Instance.lightningPrefab, headPos, Quaternion.identity);
+                    spawnedVFX = Instantiate(PlayerManager.Instance.lightningPrefab, lightningPos, Quaternion.identity);
                     CameraShake.Instance.Shake(0.2f, 0.2f);
                 }
             }
@@ -248,7 +265,8 @@ public class Enemy : MonoBehaviour
             {
                 if (spellType == SpellType.Single && PlayerManager.Instance.bombPrefab != null)
                 {
-                    spawnedVFX = Instantiate(PlayerManager.Instance.bombPrefab, feetPos, Quaternion.identity);
+                   Vector3 bombPos = feetPos + (Vector3.down * bombYOffset);
+                    spawnedVFX = Instantiate(PlayerManager.Instance.bombPrefab, bombPos, Quaternion.identity);
                 }
             }
             return spawnedVFX;

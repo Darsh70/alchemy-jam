@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
         wavesCleared++;
         if (wavesCount != null)
         {
-            wavesCount.text = $"WAVE: {wavesCleared}/10";
+            wavesCount.text = $"WAVE: {wavesCleared + 1}/7";
         }
     }
 
@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour
         {
             statsText.text = 
                 $"<size=120%>GAME OVER</size>\n\n" +
-                $"Waves Cleared: {wavesCleared}/10\n" +
+                $"Waves Cleared: {wavesCleared}/7\n" +
                 $"You Discovered:</size>\n" + 
                 $"{discoveredReactions.Count}/{totalReactions} Reaction and {discoveredCombos.Count}</color>/{totalCombos} Combos";
         }

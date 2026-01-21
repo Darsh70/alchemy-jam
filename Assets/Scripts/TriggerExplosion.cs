@@ -46,7 +46,7 @@ public class TriggerExplosion : MonoBehaviour
     {
         currentReaction = ReactionEffectType.Overload;
         damageAmount = damage; // AOE damage amount
-        delayedFeedbackText = "OVERLOAD!";
+        delayedFeedbackText = "OVERLOAD\n<size=70%>(STUN)</size>";
         delayedFeedbackColor = FeedbackManager.Instance.reactionColor;
     }
 
@@ -96,6 +96,7 @@ public class TriggerExplosion : MonoBehaviour
                 foreach (Enemy e in allEnemies)
                 {
                     if (e != null) e.TakeDamage(damageAmount);
+                    e.isStunned = true; 
                 }
             }
             CameraShake.Instance.Shake(0.3f, 0.3f);

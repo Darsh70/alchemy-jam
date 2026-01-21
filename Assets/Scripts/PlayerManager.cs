@@ -10,7 +10,7 @@ public class PlayerManager : MonoBehaviour
     private static readonly WaitForSeconds _waitForSeconds1 = new WaitForSeconds(1);
 
     [Header("Stats")]
-    public int maxHealth = 10;
+    public int maxHealth = 40;
     public int currentHealth;
 
     public int maxActionPoints = 2;
@@ -202,7 +202,7 @@ public class PlayerManager : MonoBehaviour
             }
 
             // ---------------------------------------------------------
-            // FIX START: Save the element BEFORE CheckComboOrReaction wipes it!
+            // Save the element BEFORE CheckComboOrReaction wipes it!
             // ---------------------------------------------------------
             ElementType? storedReactionElement = null;
             if (targetEnemy != null) 
@@ -228,7 +228,7 @@ public class PlayerManager : MonoBehaviour
 
             if (spellType == SpellType.Skill && element == ElementType.Water)
             {
-                Heal(3);
+                Heal(5);
             }
             else if (spellType == SpellType.Status)
             {
@@ -273,12 +273,12 @@ public class PlayerManager : MonoBehaviour
                                 if (storedReactionElement == ElementType.Water)
                                 {
 
-                                    triggerScript.SetupVaporize(targetEnemy, 9);
+                                    triggerScript.SetupVaporize(targetEnemy, 15);
                                 }
                                 else if (storedReactionElement == ElementType.Electricity)
                                 {
 
-                                    triggerScript.SetupOverload(6);
+                                    triggerScript.SetupOverload(10);
                                 }
                             }
                         }
@@ -320,7 +320,7 @@ public class PlayerManager : MonoBehaviour
             }
 
 
-            if (spellType == SpellType.Single)
+            if (spellType == SpellType.Single && element != ElementType.Bomb)
             {
                 if (currentActionPoints < maxActionPoints)
                 {
@@ -333,7 +333,7 @@ public class PlayerManager : MonoBehaviour
                 UseActionPoint();
             }
 
-            if (endsTurn || currentActionPoints == 0)
+            if (endsTurn || (currentActionPoints == 0 && spellType != SpellType.Status))
             {
                 StartCoroutine(EndTurnAfterDelay(1.2f));
             }
@@ -392,17 +392,17 @@ public class PlayerManager : MonoBehaviour
         SpellRecord first = history[0];
         SpellRecord second = history[1];
 
-        if (first.spellType == SpellType.Skill && first.element == ElementType.Water &&
-            second.spellType == SpellType.Single && second.element == ElementType.Water)
+        if (first.spellType == SpellType.Single && first.element == ElementType.Water &&
+            second.spellType == SpellType.Skill && second.element == ElementType.Water)
         {
-            string msg = "HYDRO THERAPY\n<size=70%>Regen: 3HP / 3 Turns</size>";
+            string msg = "HYDRO THERAPY\n<size=70%>Regen: 5HP / 3 Turns</size>";
             FeedbackManager.Instance.ShowText(msg, enemy.transform.position + Vector3.up * 1f, FeedbackManager.Instance.healComboColor);
             GameManager.Instance.LogCombo("HydroTherapy");
-            ApplyHoT(2, 3);
+            ApplyHoT(5, 3);
         }
 
-        if (first.spellType == SpellType.Skill && first.element == ElementType.Electricity &&
-            second.spellType == SpellType.Single && second.element == ElementType.Electricity)
+        if (first.spellType == SpellType.Single && first.element == ElementType.Electricity &&
+            second.spellType == SpellType.Skill && second.element == ElementType.Electricity)
         {
             string msg = "ELECTRO FIELD\n<size=70%>3 DMG / 3 Turns</size>";
             FeedbackManager.Instance.ShowText(msg, enemy.transform.position + Vector3.up * 1f, FeedbackManager.Instance.electricComboColor);
@@ -411,7 +411,7 @@ public class PlayerManager : MonoBehaviour
             {
                 if (e != null)
                 {
-                    AddDoT(e, ElementType.Electricity, 1, 3, null);
+                    AddDoT(e, ElementType.Electricity, 4, 3, null);
                 }
             }
         }
@@ -511,6 +511,7 @@ public class PlayerManager : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        AudioManager.Instance.PlaySFX("Theme");
         if (currentHealth <= 0)
         {
             currentHealth = 0;
@@ -531,6 +532,8 @@ public class PlayerManager : MonoBehaviour
 
         float targetFill = (float)currentHealth / maxHealth;
         float currentFill = healthBarFill.fillAmount;
+
+        if (Mathf.Abs(targetFill - currentFill) < 0.001f) return;
 
         // Stop any running animation so we don't glitch out on rapid hits
         if (healthRoutine != null) StopCoroutine(healthRoutine);
@@ -625,7 +628,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (spellType == SpellType.Status) return 0;
         if (elementType == ElementType.Water && spellType == SpellType.Skill) return 0;
-        if (elementType == ElementType.Electricity && spellType == SpellType.Skill) return 3;
+        if (elementType == ElementType.Electricity && spellType == SpellType.Skill) return 5;
 
         if (elementType == ElementType.Bomb && spellType == SpellType.Ultimate) return 25;
 
@@ -663,8 +666,8 @@ public class PlayerManager : MonoBehaviour
         // Get the last spell cast
         SpellRecord lastSpell = spellHistory.ToArray()[spellHistory.Count - 1];
 
-        if (spellType == SpellType.Single && 
-            lastSpell.spellType == SpellType.Skill && 
+        if (spellType == SpellType.Skill && 
+            lastSpell.spellType == SpellType.Single && 
             lastSpell.element == element)
         {
             return true; 

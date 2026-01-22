@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: 3fd3c754339814435ac4f8ae74e160b8
+guid: f176a27b4a12841c68d0bcf908a79322
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3316437569822610039
-    second: button-border-AP_0
-  - first:
-      213: 9099439135036004308
-    second: button-border-AP_1
-  - first:
-      213: -2785097077040077649
-    second: button-border-AP_2
-  - first:
-      213: 8144791620147083252
-    second: button-border-AP_3
+      213: -3958358227388057241
+    second: portrait-2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -55,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -109,57 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: button-border-AP_0
+      name: portrait-2_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 17
-        width: 26
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7725905066a560e20800000000000000
-      internalID: 3316437569822610039
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: button-border-AP_1
-      rect:
-        serializedVersion: 2
-        x: 38
-        y: 17
-        width: 26
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4d7db13bea3b74e70800000000000000
-      internalID: 9099439135036004308
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: button-border-AP_2
-      rect:
-        serializedVersion: 2
-        x: 0
+        x: 1
         y: 0
-        width: 26
-        height: 15
+        width: 30
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,30 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fa42c0ae6f85959d0800000000000000
-      internalID: -2785097077040077649
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: button-border-AP_3
-      rect:
-        serializedVersion: 2
-        x: 38
-        y: 0
-        width: 26
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4f7f17853dc180170800000000000000
-      internalID: 8144791620147083252
+      spriteID: 7693aca1a261119c0800000000000000
+      internalID: -3958358227388057241
       vertices: []
       indices: 
       edges: []
@@ -200,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -210,10 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      button-border-AP_0: 3316437569822610039
-      button-border-AP_1: 9099439135036004308
-      button-border-AP_2: -2785097077040077649
-      button-border-AP_3: 8144791620147083252
+      portrait-2_0: -3958358227388057241
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

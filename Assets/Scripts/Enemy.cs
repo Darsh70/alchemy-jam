@@ -187,6 +187,14 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    public void PlaySoundEffect(string soundName)
+    {
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlaySFX(soundName);
+        }
+    }
+
     public void ResetPosition()
     {
         transform.position = originalPosition;

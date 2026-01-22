@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class PlayerManager : MonoBehaviour
     private static readonly WaitForSeconds _waitForSeconds1 = new WaitForSeconds(1);
 
     [Header("Stats")]
-    public int maxHealth = 40;
+    public int maxHealth = 60;
     public int currentHealth;
 
     public int maxActionPoints = 2;
@@ -43,9 +44,13 @@ public class PlayerManager : MonoBehaviour
     public GameObject waterBallPrefab;
     public GameObject rainPrefab;
     public GameObject bombPrefab;
+    public GameObject voidEyePrefab;
 
     [Header("UI VFX")]
     public RectTransform magePortrait; 
+
+    [Header("Button UI")]
+    public TextMeshProUGUI bombCount;
 
 
 
@@ -58,11 +63,13 @@ public class PlayerManager : MonoBehaviour
     {
         public ElementType element;
         public SpellType spellType;
+        public int turnCast;
 
-        public SpellRecord(ElementType e, SpellType s)
+        public SpellRecord(ElementType e, SpellType s,int t)
         {
             element = e;
             spellType = s;
+            turnCast = t;
         }
     }
 
@@ -107,6 +114,7 @@ public class PlayerManager : MonoBehaviour
 
         UpdateHealthUI();
         UpdateActionPoints();
+        UpdateBombCounterUI();
     }
 
     // ─────────────────────────────
@@ -184,7 +192,7 @@ public class PlayerManager : MonoBehaviour
             }
 
             bool costsAP = spellType == SpellType.Skill || spellType == SpellType.Status;
-            bool endsTurn = spellType == SpellType.Single || spellType == SpellType.Skill;
+            bool endsTurn = spellType == SpellType.Single || spellType == SpellType.Skill || spellType == SpellType.Ultimate;
 
             if (costsAP && currentActionPoints <= 0)
             {
@@ -291,14 +299,17 @@ public class PlayerManager : MonoBehaviour
                     }
                     else if (element == ElementType.Electricity && spellType == SpellType.Single)
                     {
+                        AudioManager.Instance.PlaySFX("Zap");
                         delay = 3f/12f;
                     }
                     else if (element == ElementType.Electricity && spellType == SpellType.Skill)
                     {
+                        AudioManager.Instance.PlaySFX("Lightning");
                         delay = 1f/12f;
                     }
                     else if (element == ElementType.Water && spellType == SpellType.Single)
                     {
+                        AudioManager.Instance.PlaySFX("WaterBall");
                         delay = 9f/12f;
                     }
                     
@@ -312,6 +323,7 @@ public class PlayerManager : MonoBehaviour
             if (element == ElementType.Bomb && spellType == SpellType.Single)
             {
                 bombCounter++;
+                UpdateBombCounterUI();
                 Debug.Log($"Bomb counter: {bombCounter}/3");
             }
             else if (spellType == SpellType.Ultimate)
@@ -341,9 +353,31 @@ public class PlayerManager : MonoBehaviour
             spellMenu.HideAll();
         }
 
+    void UpdateBombCounterUI()
+    {
+        if (bombCount == null) return;
+
+        int remaining = 3 - bombCounter;
+
+        if (remaining > 0)
+        {
+            bombCount.text = $"{remaining}x BOMB"; 
+            bombCount.color = Color.white; 
+        }
+        else
+        {
+            // Shows explicit confirmation instead of disappearing
+            bombCount.text = "\nREADY!"; 
+            bombCount.color = Color.magenta; // Use your Void purple color
+        }
+    }
+
     void RecordSpell(ElementType element, SpellType spellType)
     {
-        spellHistory.Enqueue(new SpellRecord(element, spellType));
+        int currentTurn = TurnManager.Instance.currentTurnIndex;
+
+        // Save it in the record
+        spellHistory.Enqueue(new SpellRecord(element, spellType, currentTurn));
         if (spellHistory.Count > 2)
             spellHistory.Dequeue();
     }
@@ -433,12 +467,12 @@ public class PlayerManager : MonoBehaviour
             }
             else
             {
-                offset = Vector3.up * e.floorOffset; // usually a negative number
+                offset = Vector3.up * e.floorOffset; 
             }
         }
         else
         {
-            // Fallback default if script is missing
+
             offset = (spellType == SpellType.Status) ? Vector3.up * 1.8f : Vector3.down * 0.5f;
         }
         
@@ -468,6 +502,7 @@ public class PlayerManager : MonoBehaviour
         return mc;
     }
 
+
     IEnumerator DelayedDamage(Enemy enemy, int damage, ElementType element, SpellType spellType,float delayTime)
     {
         yield return new WaitForSeconds(delayTime); 
@@ -486,8 +521,10 @@ public class PlayerManager : MonoBehaviour
 
         if (actualHealed > 0)
         {
+
             if (magePortrait != null)
             {
+                AudioManager.Instance.PlaySFX("Heal");
                 string healText = $"<size=150%>+{actualHealed}</size>";
                 FeedbackManager.Instance.ShowScreenText(healText, magePortrait.position, Color.green);
             }
@@ -616,7 +653,14 @@ public class PlayerManager : MonoBehaviour
     }
 
     public void CastBomb() => CastSpell(ElementType.Bomb, SpellType.Single);
-    public void CastBlackHole() => CastSpell(ElementType.Bomb, SpellType.Ultimate);
+    public void CastBlackHole()
+    {
+        CastSpell(ElementType.Bomb, SpellType.Ultimate);
+        Vector3 spawnPos = new Vector3(0, 10, 0); 
+        Instantiate(voidEyePrefab, spawnPos, Quaternion.identity); 
+        bombCounter = 0;
+        UpdateBombCounterUI();
+    } 
     public void CastWaterBall() => CastSpell(ElementType.Water, SpellType.Single);
     public void CastHeal() => CastSpell(ElementType.Water, SpellType.Skill);
     public void CastRain() => CastSpell(ElementType.Water, SpellType.Status);
@@ -671,6 +715,25 @@ public class PlayerManager : MonoBehaviour
             lastSpell.element == element)
         {
             return true; 
+        }
+
+        return false;
+    }
+    public bool IsAnyComboReady()
+    {
+
+        if (spellHistory.Count == 0) return false;
+
+
+        SpellRecord[] arr = spellHistory.ToArray();
+        SpellRecord lastSpell = arr[arr.Length - 1];
+
+        if (lastSpell.spellType == SpellType.Single && lastSpell.element != ElementType.Bomb)
+        {
+            if (lastSpell.turnCast < TurnManager.Instance.currentTurnIndex)
+            {
+                return true;
+            }
         }
 
         return false;

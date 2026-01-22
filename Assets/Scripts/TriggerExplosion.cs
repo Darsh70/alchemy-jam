@@ -55,6 +55,7 @@ public class TriggerExplosion : MonoBehaviour
     {
 
         GameObject prefabToSpawn = normalExplosion;
+        string soundName = "Explosion";
         switch (currentReaction)
         {
             case ReactionEffectType.Vaporize:
@@ -82,6 +83,7 @@ public class TriggerExplosion : MonoBehaviour
         {
             if (singleTarget != null)
             {
+                soundName = "Vaporize";
                 singleTarget.TakeDamage(damageAmount);
                 CameraShake.Instance.Shake(0.2f, 0.4f);
             }
@@ -100,6 +102,10 @@ public class TriggerExplosion : MonoBehaviour
                 }
             }
             CameraShake.Instance.Shake(0.3f, 0.3f);
+        }
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlaySFX(soundName);
         }
 
         Destroy(gameObject);

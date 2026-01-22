@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class FeedbackManager : MonoBehaviour
 {
@@ -15,17 +16,60 @@ public class FeedbackManager : MonoBehaviour
 
     private bool useRightSide = true;
 
-    // NEW: Define your two fixed offsets here (X, Y, Z)
-    // Offset A: Slightly Right and Up
     private Vector3 offsetRight = new Vector3(60f, 150f, 0f);
-    // Offset B: Slightly Left and Up
+
     private Vector3 offsetLeft = new Vector3(-60f, 120f, 0f); 
+
+    [Header("Hint UI Settings")]
+    public GameObject indicatorObject;    
+    public TextMeshProUGUI indicatorText;
 
     void Awake()
     {
         Instance = this;
+        if (indicatorObject != null) indicatorObject.SetActive(false);
     }
 
+    void Update()
+    {
+
+        if (PlayerManager.Instance == null || GameManager.Instance == null || TurnManager.Instance == null) return;
+        
+        // Only show hints during Player Turn and Active Game
+        if (!GameManager.Instance.isGameActive || TurnManager.Instance.currentState != TurnState.PlayerTurn)
+        {
+            HideIndicator();
+            return;
+        }
+
+        if (PlayerManager.Instance.IsAnyComboReady())
+        {
+            ShowIndicator("COMBO\nREADY!");
+        }
+        else if (PlayerManager.Instance.IsReactionAvailable())
+        {
+            ShowIndicator("REACTION\nREADY!");
+        }
+        else
+        {
+            HideIndicator();
+        }
+    }
+
+    void ShowIndicator(string message)
+    {
+        if (indicatorObject != null && !indicatorObject.activeSelf) 
+            indicatorObject.SetActive(true);
+            
+        if (indicatorText != null) 
+            indicatorText.text = message;
+    }
+
+    void HideIndicator()
+    {
+        if (indicatorObject != null && indicatorObject.activeSelf) 
+            indicatorObject.SetActive(false);
+    }
     public void ShowText(string message, Vector3 worldPosition, Color color)
         {
             if (floatingTextPrefab == null || gameCanvas == null) return;

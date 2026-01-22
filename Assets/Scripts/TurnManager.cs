@@ -8,6 +8,7 @@ public class TurnManager : MonoBehaviour
 
     public TurnState currentState = TurnState.PlayerTurn;
     public PlayerManager playerManager;
+    public int currentTurnIndex = 0; 
 
     void Awake()
     {
@@ -40,7 +41,9 @@ public class TurnManager : MonoBehaviour
     // ----- PLAYER TURN ------
     public void StartPlayerTurn()
     {
+        currentTurnIndex++; 
         currentState = TurnState.PlayerTurn;
+        
         Debug.Log("Player turn started");
 
         if (playerManager != null)

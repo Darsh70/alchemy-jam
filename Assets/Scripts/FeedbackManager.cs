@@ -44,11 +44,11 @@ public class FeedbackManager : MonoBehaviour
 
         if (PlayerManager.Instance.IsAnyComboReady())
         {
-            ShowIndicator("COMBO\nREADY!");
+            ShowIndicator("COMBO\n AVAILABLE!");
         }
         else if (PlayerManager.Instance.IsReactionAvailable())
         {
-            ShowIndicator("REACTION\nREADY!");
+            ShowIndicator("REACTION\n AVAILABLE!");
         }
         else
         {

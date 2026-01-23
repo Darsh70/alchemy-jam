@@ -187,6 +187,7 @@ public class PlayerManager : MonoBehaviour
 
             if (spellType == SpellType.Ultimate && element == ElementType.Bomb && bombCounter < 3)
             {
+                AudioManager.Instance.PlaySFX("Error");
                 Debug.Log($"Ultimate not ready. Charges: {bombCounter}/3");
                 return;
             }
@@ -196,6 +197,7 @@ public class PlayerManager : MonoBehaviour
 
             if (costsAP && currentActionPoints <= 0)
             {
+                AudioManager.Instance.PlaySFX("Error");
                 Debug.Log("Out of AP");
                 return;
             }
@@ -205,9 +207,12 @@ public class PlayerManager : MonoBehaviour
 
             if (targetEnemy == null && spellType != SpellType.Status)
             {
+                AudioManager.Instance.PlaySFX("Error");
                 Debug.LogWarning("No enemies available");
                 return;
             }
+
+            AudioManager.Instance.PlaySFX("Click");
 
             // ---------------------------------------------------------
             // Save the element BEFORE CheckComboOrReaction wipes it!
@@ -548,11 +553,10 @@ public class PlayerManager : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        AudioManager.Instance.PlaySFX("Theme");
         if (currentHealth <= 0)
         {
             currentHealth = 0;
-            GameManager.Instance.TriggerGameOver();
+            GameManager.Instance.TriggerGameOver(false);
         }
         UpdateHealthUI();
     }
@@ -655,6 +659,7 @@ public class PlayerManager : MonoBehaviour
     public void CastBomb() => CastSpell(ElementType.Bomb, SpellType.Single);
     public void CastBlackHole()
     {
+        if (bombCounter < 3) return;
         CastSpell(ElementType.Bomb, SpellType.Ultimate);
         Vector3 spawnPos = new Vector3(0, 10, 0); 
         Instantiate(voidEyePrefab, spawnPos, Quaternion.identity); 
@@ -670,11 +675,9 @@ public class PlayerManager : MonoBehaviour
 
     int GetBaseDamage(ElementType elementType, SpellType spellType)
     {
-        if (spellType == SpellType.Status) return 0;
+        if (spellType == SpellType.Status || spellType == SpellType.Ultimate) return 0;
         if (elementType == ElementType.Water && spellType == SpellType.Skill) return 0;
         if (elementType == ElementType.Electricity && spellType == SpellType.Skill) return 5;
-
-        if (elementType == ElementType.Bomb && spellType == SpellType.Ultimate) return 25;
 
         return elementType switch
         {

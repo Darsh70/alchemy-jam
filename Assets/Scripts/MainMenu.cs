@@ -9,6 +9,9 @@ public class MainMenu : MonoBehaviour
     public float floatSpeed = 2f;
     public float floatHeight = 10f;
 
+    [Header("UI Panels")]
+    public GameObject creditsPanel;
+
     private Vector2 startPos;
 
     void Start()
@@ -37,13 +40,19 @@ public class MainMenu : MonoBehaviour
         
         // Load the game scene
         SceneManager.LoadScene(1); 
+        AudioManager.Instance.StartBattleMusic();
     }
 
-    public void OnQuitClicked()
+    public void OnCreditsClicked()
     {
         if (AudioManager.Instance != null) AudioManager.Instance.PlaySFX("Click");
         
-        Debug.Log("Quitting Game...");
-        Application.Quit();
+        creditsPanel.SetActive(true);
+    }
+     public void OnCloseCreditsClicked()
+    {
+        if (AudioManager.Instance != null) AudioManager.Instance.PlaySFX("Click");
+        
+        creditsPanel.SetActive(false);
     }
 }

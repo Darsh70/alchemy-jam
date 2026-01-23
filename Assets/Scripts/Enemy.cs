@@ -218,9 +218,21 @@ public class Enemy : MonoBehaviour
         if (health <= 0) Die();
         else
         {
-            animator.SetTrigger("Hurt");
+            if (HasParameter("Hurt", animator))
+            {
+                animator.SetTrigger("Hurt");
+            }
             PlayHurtEffect(); 
         }
+    }
+
+    private bool HasParameter(string paramName, Animator anim)
+    {
+        foreach (AnimatorControllerParameter param in anim.parameters)
+        {
+            if (param.name == paramName) return true;
+        }
+        return false;
     }
 
     private IEnumerator HurtAnimationRoutine()

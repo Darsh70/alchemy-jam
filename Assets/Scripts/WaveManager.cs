@@ -48,7 +48,7 @@ public class WaveManager : MonoBehaviour
         if (currentWave > allWaves.Count)
         {
             Debug.Log("ALL WAVES CLEARED! VICTORY!");
-            // GameManager.Instance.TriggerVictory(); 
+            GameManager.Instance.TriggerGameOver(true); 
             return;
         }
 
@@ -101,6 +101,8 @@ public class WaveManager : MonoBehaviour
         yield return new WaitForSeconds(waveDelay);
 
         currentWave++;
+        if (currentWave == 6) AudioManager.Instance.PlayRestMusic();
+        if (currentWave == 7) AudioManager.Instance.PlayBossMusic();
         SpawnWave();
         
         // Only start turn if we actually spawned something 

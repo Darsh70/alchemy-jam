@@ -38,10 +38,20 @@ public class GameManager : MonoBehaviour
         Instance = this;
     }
 
+    void Start()
+    {
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.StartBattleMusic();
+        }
+    }
+
+
     public void AddWaveCleared()
     {
         wavesCleared++;
-        if (wavesCount != null)
+        if (wavesCleared >= 7) wavesCount.text = "";
+        if (wavesCount != null && wavesCleared < 7)
         {
             wavesCount.text = $"WAVE: {wavesCleared + 1}/7";
         }
@@ -65,18 +75,20 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void TriggerGameOver()
+    public void TriggerGameOver(bool victory)
     {
         if (!isGameActive) return;
+        AudioManager.Instance.PlayGameOverMusic();
 
         isGameActive = false;
-        
+        string endTitle = victory ? "Victory!" : "Game Over!";
+
         if (statsText != null)
         {
             statsText.text = 
-                $"<size=120%>GAME OVER</size>\n\n" +
+                $"<size=120%>{endTitle}</size>\n\n" +
                 $"Waves Cleared: {wavesCleared}/7\n" +
-                $"You Discovered:</size>\n" + 
+                $"You Discovered:\n" + 
                 $"{discoveredReactions.Count}/{totalReactions} Reaction and {discoveredCombos.Count}</color>/{totalCombos} Combos";
         }
 

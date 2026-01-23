@@ -48,7 +48,10 @@ MonoBehaviour:
   normalExplosionPrefab: {fileID: 4940887592536772327, guid: 24f26f2a12c60402a931b4cc511789e0, type: 3}
   bombSprite: {fileID: 359151085593736923}
   fallSpeed: 15
+  rotationSpeed: 300
   damageAmount: 20
+  bounceHeight: 2
+  bounceDuration: 0.4
 --- !u!1 &7378136358610856739
 GameObject:
   m_ObjectHideFlags: 0
